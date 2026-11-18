@@ -1,0 +1,181 @@
+{
+  "status": "PARTIAL_SYNTHETIC_KNOWN_RISKS_NOT_A_RELEASE",
+  "engine": "chromium",
+  "nodeVersion": "v20.20.2",
+  "sourceSha256": "d651995737be1b3f3b1d3b3588bc72ba313d5ab166aad7c7d1cb8cc3ba00efcf",
+  "pinnedFixtureSha256": {
+    "index.html": "372da5582453a954bd327d53074aa0c2695e7c5dc655fd9521ab6631ea22cd05",
+    "main.dart.js": "fbe81cc44f9d747592ebe7c2a687fe137c46a853d5f680c04bc442a3db489c11",
+    "fitness_worker.js": "c82632c6495999fcca11ee3eaad2b56a44c48432fa1ec65384aefd2896750a49",
+    "flutter_bootstrap.js": "9ef3946a6c312dc35f5f7814b136fb9b1cd0e1c5ec5701752a46baec2f03b2f6",
+    "version.json": "52ecc8aa6294dfcdf190c4fd7082f326a4deba8d5cd158413e52bad3f57aba0d"
+  },
+  "checks": [
+    {
+      "name": "unprivileged process sees only an up loopback interface and no external routes",
+      "status": "PASS"
+    },
+    {
+      "name": "five archived +14 assets match their pinned SHA-256",
+      "status": "PASS"
+    },
+    {
+      "name": "original archived worker controls the synthetic seed page",
+      "status": "PASS"
+    },
+    {
+      "name": "original worker cached the exact archived main",
+      "status": "PASS"
+    },
+    {
+      "name": "seed +250 committed into disposable v1 database",
+      "status": "PASS",
+      "detail": "{\"version\":1,\"water\":[[\"water_intake_2026-11-17\",250]]}"
+    },
+    {
+      "name": "two archived tabs independently display the same initial 250 ml",
+      "status": "PASS"
+    },
+    {
+      "name": "both tabs are controlled by the unmodified archived worker",
+      "status": "PASS"
+    },
+    {
+      "name": "loopback socket is actually cut during both tab actions",
+      "status": "PASS"
+    },
+    {
+      "name": "tab A commits +250 to 500 ml",
+      "status": "PASS",
+      "detail": "{\"version\":1,\"water\":[[\"water_intake_2026-11-17\",500]]}"
+    },
+    {
+      "name": "tab B still displays its stale 250 ml after A commits",
+      "status": "PASS"
+    },
+    {
+      "name": "tab B completes its own separate transaction writing 500 ml",
+      "status": "PASS",
+      "detail": "[{\"key\":\"water_intake_2026-11-17\",\"value\":500,\"completed\":true,\"aborted\":false}]"
+    },
+    {
+      "name": "after closing both tabs, exact archived app reopens from its offline worker",
+      "status": "PASS"
+    },
+    {
+      "name": "persisted value and reloaded old UI both remain 500 ml",
+      "status": "PASS",
+      "detail": "{\"version\":1,\"water\":[[\"water_intake_2026-11-17\",500]]}"
+    },
+    {
+      "name": "no unexpected page errors were recorded",
+      "status": "PASS",
+      "detail": "[]"
+    }
+  ],
+  "risks": [
+    {
+      "name": "three separate +250 actions end at 500 ml instead of 750 ml",
+      "status": "RISK_REPRODUCED",
+      "detail": "1 seed action + 1 from each tab = 750 ml; v1 IndexedDB contains 500 ml."
+    },
+    {
+      "name": "value-only snapshots before and after the stale action are identical despite a completed write",
+      "status": "RISK_REPRODUCED",
+      "detail": "A fresh readonly snapshot cannot distinguish these two states."
+    }
+  ],
+  "failures": [],
+  "observations": {
+    "networkIsolation": {
+      "uid": 1000,
+      "interfaces": [
+        "lo"
+      ],
+      "routes4": 0,
+      "routes6": 0
+    },
+    "browserVersion": "141.0.7390.37",
+    "sequence": {
+      "seed": {
+        "version": 1,
+        "water": [
+          [
+            "water_intake_2026-11-17",
+            250
+          ]
+        ]
+      },
+      "afterTabA": {
+        "version": 1,
+        "water": [
+          [
+            "water_intake_2026-11-17",
+            500
+          ]
+        ]
+      },
+      "afterTabB": {
+        "version": 1,
+        "water": [
+          [
+            "water_intake_2026-11-17",
+            500
+          ]
+        ]
+      },
+      "tabATrace": [
+        {
+          "key": "water_intake_2026-11-17",
+          "value": 500,
+          "completed": true,
+          "aborted": false
+        }
+      ],
+      "tabBTrace": [
+        {
+          "key": "water_intake_2026-11-17",
+          "value": 500,
+          "completed": true,
+          "aborted": false
+        }
+      ],
+      "expectedForThreeSeparateActions": 750,
+      "actual": 500
+    }
+  },
+  "loaded": [
+    {
+      "page": "seed",
+      "sha256": "fbe81cc44f9d747592ebe7c2a687fe137c46a853d5f680c04bc442a3db489c11",
+      "serviceWorker": false
+    },
+    {
+      "page": "old-tab-A",
+      "sha256": "fbe81cc44f9d747592ebe7c2a687fe137c46a853d5f680c04bc442a3db489c11",
+      "serviceWorker": true
+    },
+    {
+      "page": "old-tab-B",
+      "sha256": "fbe81cc44f9d747592ebe7c2a687fe137c46a853d5f680c04bc442a3db489c11",
+      "serviceWorker": true
+    },
+    {
+      "page": "offline-reopen",
+      "sha256": "fbe81cc44f9d747592ebe7c2a687fe137c46a853d5f680c04bc442a3db489c11",
+      "serviceWorker": true
+    }
+  ],
+  "pageErrors": [],
+  "blockedPageHosts": [
+    "fonts.gstatic.com"
+  ],
+  "networkCutRejectedRequests": 11,
+  "limitations": [
+    "Disposable browser context and random loopback origin in an OS network namespace. All water is fabricated; not a real diary or account.",
+    "Exact archived +14 HTML, JS, worker and bootstrap, with observation-only IDB put tracing and accessibility enabled. Only one selected scheduling sequence was tested.",
+    "Three separate +250 clicks are treated as separate intentions. Identical snapshots show loss of that intention in this scenario, not a proof about all possible histories.",
+    "Socket cut is not physical airplane mode, power loss, quota exhaustion, Safari/iOS, Android, multi-device, Auth, cloud sync or actual backup/restore.",
+    "No patch to +14 or new client was tested. No claim about all journal types, bfcache, rollback design, or readiness to release."
+  ]
+}

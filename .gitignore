@@ -1,0 +1,31 @@
+# Refuse common local state, credentials, user data and generated artifacts.
+# Ignore rules are only a safeguard; manual review is still required.
+.env
+.env.*
+!.env.server.example
+config.public.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.hive
+*.hive.lock
+*.sqlite
+*.sqlite3
+*.db
+*.bak
+*.bundle
+*.zip
+*.tar.gz
+*.log
+*.log.gz
+**/node_modules/
+**/.dart_tool/
+**/build/
+**/coverage/
+**/__pycache__/
+**/.vercel/
+**/supabase/.temp/
+.DS_Store

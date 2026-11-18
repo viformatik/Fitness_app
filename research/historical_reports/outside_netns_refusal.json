@@ -1,0 +1,37 @@
+{
+  "status": "FAIL_OR_INCOMPLETE",
+  "engine": "chromium",
+  "nodeVersion": "v20.20.2",
+  "sourceSha256": "965e89c6b06cede85eb8a1fd67a728a1947ce298d9982b9967b908ba5716c132",
+  "pinnedFixtureSha256": {
+    "index.html": "372da5582453a954bd327d53074aa0c2695e7c5dc655fd9521ab6631ea22cd05",
+    "main.dart.js": "fbe81cc44f9d747592ebe7c2a687fe137c46a853d5f680c04bc442a3db489c11",
+    "fitness_worker.js": "c82632c6495999fcca11ee3eaad2b56a44c48432fa1ec65384aefd2896750a49",
+    "flutter_bootstrap.js": "9ef3946a6c312dc35f5f7814b136fb9b1cd0e1c5ec5701752a46baec2f03b2f6",
+    "version.json": "52ecc8aa6294dfcdf190c4fd7082f326a4deba8d5cd158413e52bad3f57aba0d"
+  },
+  "checks": [
+    {
+      "name": "unprivileged process sees only an up loopback interface and no external routes",
+      "status": "FAIL"
+    }
+  ],
+  "risks": [],
+  "skips": [],
+  "failures": [
+    "Error: unprivileged process sees only an up loopback interface and no external routes\n    at check (/home/user/00_FITNESS_BRANCH_RESEARCH/experiments/offline_fence_probe.cjs:50:18)\n    at /home/user/00_FITNESS_BRANCH_RESEARCH/experiments/offline_fence_probe.cjs:196:5\n    at Object.<anonymous> (/home/user/00_FITNESS_BRANCH_RESEARCH/experiments/offline_fence_probe.cjs:355:3)\n    at Module._compile (node:internal/modules/cjs/loader:1521:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)\n    at Module.load (node:internal/modules/cjs/loader:1266:32)\n    at Module._load (node:internal/modules/cjs/loader:1091:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)\n    at node:internal/main/run_main_module:28:49"
+  ],
+  "observations": {},
+  "loaded": [],
+  "pageErrors": [],
+  "blockedPageHosts": [],
+  "networkCutRejectedRequests": 0,
+  "limitations": [
+    "New disposable browser context and random 127.0.0.1 origin only; loopback network namespace required by wrapper. The storage is synthetic and is not a user diary.",
+    "Archived HTML, Flutter JS, bootstrap and service worker were exact in control and rollback scenarios. The instrumentation observes IDB but does not change its arguments or responses.",
+    "The v2 upgrade is an artificial version fence with no schema changes; it is not an application upgrade or a real rollback solution.",
+    "The mixed-cache scenario deliberately substituted one synthetic version.json. It does not prove a real partial deployment or that a specific app would break.",
+    "Socket cut is not browser airplane mode, power loss, quota exhaustion, Safari/iOS, Android, multi-device, Auth, cloud sync or a backup/restore test.",
+    "One water key and selected schedules only. No claim of safety for other diary records, lifecycle, crashes, ABA, partitioning or release readiness."
+  ]
+}

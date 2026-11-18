@@ -1,0 +1,8 @@
+# Authenticated inside the function using supabase.auth.getUser().
+# Required for projects with modern asymmetric JWT signing keys.
+[functions.food-ai]
+verify_jwt = false
+
+# The workout function also verifies the caller through GoTrue internally.
+[functions.workout-ai]
+verify_jwt = false

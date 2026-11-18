@@ -1,0 +1,220 @@
+{
+  "status": "PARTIAL_SYNTHETIC_RESEARCH_NOT_RELEASE",
+  "verificationSourceSha256": "ace1f2bddaedfa726732db630f21c4e7915146a99f1a4c6fbe26fbb28c193db9",
+  "passed": 41,
+  "checks": [
+    {
+      "name": "pinned base_reconstruction/fitness_smart_synthetic_preview_restored_candidate.bundle",
+      "status": "PASS"
+    },
+    {
+      "name": "pinned base_reconstruction/fitness_smart_local_clear_checkpoint_browser_WIP_NOT_RELEASE.patch.gz",
+      "status": "PASS"
+    },
+    {
+      "name": "pinned fixtures/archived_v14_web.tar.gz",
+      "status": "PASS"
+    },
+    {
+      "name": "pinned recovered_exact_catalogs/lib/smart/local_catalog.dart",
+      "status": "PASS"
+    },
+    {
+      "name": "pinned recovered_exact_catalogs/lib/smart/regional_foods.dart",
+      "status": "PASS"
+    },
+    {
+      "name": "pinned recovered_exact_catalogs/tools/build_regional_foods.py",
+      "status": "PASS"
+    },
+    {
+      "name": "pinned recovered_exact_catalogs/tools/data/regional_dairy.json",
+      "status": "PASS"
+    },
+    {
+      "name": "pinned recovered_sql_v1_DO_NOT_APPLY/food_search_upstream_budget_v1_as_sent_test.sql",
+      "status": "PASS"
+    },
+    {
+      "name": "pinned surviving_previous_evidence/recovery_tests/reconstructed_online_contract_test.dart",
+      "status": "PASS"
+    },
+    {
+      "name": "regenerated catalog rows are 99 PMR and 29 dairy",
+      "status": "PASS"
+    },
+    {
+      "name": "all 22 individually enumerated survivor hashes match",
+      "status": "PASS"
+    },
+    {
+      "name": "separate recovered/fast test survivor hashes match",
+      "status": "PASS"
+    },
+    {
+      "name": "historical fork source hashes match",
+      "status": "PASS"
+    },
+    {
+      "name": "historical fork report hashes match",
+      "status": "PASS"
+    },
+    {
+      "name": "historical +14/+41 race harness source hashes match",
+      "status": "PASS"
+    },
+    {
+      "name": "chromium_initial report is bound to its included source",
+      "status": "PASS"
+    },
+    {
+      "name": "chromium_initial has the expected diagnostic and risk statuses",
+      "status": "PASS"
+    },
+    {
+      "name": "chromium_initial actually loaded pinned +14 JS offline via service worker",
+      "status": "PASS"
+    },
+    {
+      "name": "chromium_initial observes actual v1 VersionError after v2",
+      "status": "PASS"
+    },
+    {
+      "name": "chromium_guarded_v2 report is bound to its included source",
+      "status": "PASS"
+    },
+    {
+      "name": "chromium_guarded_v2 has the expected diagnostic and risk statuses",
+      "status": "PASS"
+    },
+    {
+      "name": "chromium_guarded_v2 actually loaded pinned +14 JS offline via service worker",
+      "status": "PASS"
+    },
+    {
+      "name": "chromium_guarded_v2 observes actual v1 VersionError after v2",
+      "status": "PASS"
+    },
+    {
+      "name": "race_chromium_initial report is bound to its included source",
+      "status": "PASS"
+    },
+    {
+      "name": "race_chromium_initial has the expected diagnostic and risk statuses",
+      "status": "PASS"
+    },
+    {
+      "name": "race_chromium_initial actually loaded pinned +14 JS offline via service worker",
+      "status": "PASS"
+    },
+    {
+      "name": "race_chromium_initial has 750 expected, 500 actual and identical later snapshots",
+      "status": "PASS"
+    },
+    {
+      "name": "firefox_initial report is bound to its included source",
+      "status": "PASS"
+    },
+    {
+      "name": "firefox_initial has the expected diagnostic and risk statuses",
+      "status": "PASS"
+    },
+    {
+      "name": "firefox_initial actually loaded pinned +14 JS offline via service worker",
+      "status": "PASS"
+    },
+    {
+      "name": "firefox_initial observes actual v1 VersionError after v2",
+      "status": "PASS"
+    },
+    {
+      "name": "firefox_guarded_v2 report is bound to its included source",
+      "status": "PASS"
+    },
+    {
+      "name": "firefox_guarded_v2 has the expected diagnostic and risk statuses",
+      "status": "PASS"
+    },
+    {
+      "name": "firefox_guarded_v2 actually loaded pinned +14 JS offline via service worker",
+      "status": "PASS"
+    },
+    {
+      "name": "firefox_guarded_v2 observes actual v1 VersionError after v2",
+      "status": "PASS"
+    },
+    {
+      "name": "race_firefox_initial report is bound to its included source",
+      "status": "PASS"
+    },
+    {
+      "name": "race_firefox_initial has the expected diagnostic and risk statuses",
+      "status": "PASS"
+    },
+    {
+      "name": "race_firefox_initial actually loaded pinned +14 JS offline via service worker",
+      "status": "PASS"
+    },
+    {
+      "name": "race_firefox_initial has 750 expected, 500 actual and identical later snapshots",
+      "status": "PASS"
+    },
+    {
+      "name": "portable wrapper independently ran the current fence source",
+      "status": "PASS"
+    },
+    {
+      "name": "outside-netns failure is a deliberate refusal before browser load",
+      "status": "PASS"
+    }
+  ],
+  "browserReports": [
+    {
+      "report": "experiments/chromium_initial.json",
+      "sha256": "ae75d334a8ac1e501452e958d8742cdf686a6a32cd4f43dc20c284b5fe66eb3c",
+      "passConditions": 21,
+      "risksReproduced": 2,
+      "browserVersion": "141.0.7390.37"
+    },
+    {
+      "report": "experiments/chromium_guarded_v2.json",
+      "sha256": "ac7b52e199b83ec1dce4ddaf83eb9fbb3981bc289761e8c3ee4ddd76416b3ecf",
+      "passConditions": 22,
+      "risksReproduced": 2,
+      "browserVersion": "141.0.7390.37"
+    },
+    {
+      "report": "experiments/race_chromium_initial.json",
+      "sha256": "b130696a395cc720939179d3b534661465b2c5cb987ff8abff77489410a75d89",
+      "passConditions": 14,
+      "risksReproduced": 2,
+      "browserVersion": "141.0.7390.37"
+    },
+    {
+      "report": "experiments/firefox_initial.json",
+      "sha256": "8ba8f13ab9be5a5f4463cf945174cff7ba092dd8f9acc6f3fc33c631855d179c",
+      "passConditions": 21,
+      "risksReproduced": 2,
+      "browserVersion": "142.0.1"
+    },
+    {
+      "report": "experiments/firefox_guarded_v2.json",
+      "sha256": "94e101cda4dee8ada2d1d9c463dd3e31364b626d33b1525b474eee6e32f74432",
+      "passConditions": 22,
+      "risksReproduced": 2,
+      "browserVersion": "142.0.1"
+    },
+    {
+      "report": "experiments/race_firefox_initial.json",
+      "sha256": "87d6f7dad9ce77819230b521397ecab258013a778f4176c56bbae1bf90075b69",
+      "passConditions": 14,
+      "risksReproduced": 2,
+      "browserVersion": "142.0.1"
+    }
+  ],
+  "limitations": [
+    "Verifies hashes and internal report consistency, not authenticity or an independent rerun.",
+    "Prior full regression and reconstructed release sources are missing; no current full-app claim.",
+    "Two-browser synthetic tests reproduced risks, not fixes."
+  ]
+}
