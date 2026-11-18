@@ -1,0 +1,99 @@
+{
+  "status": "PASS_WITH_REPRODUCED_RISK_NOT_A_RELEASE",
+  "engine": "chromium",
+  "sourceSha256": "4c6362e75f299f2aab46b560736ae39b0efdf68c4e273a8b9864b82cc50da0be",
+  "nodeVersion": "v20.20.2",
+  "fixtureArchiveSha256": "457e5da0b9d7da6d55e29c712428b52a84d8b626a4c7af39a3501cdcb4d5ae02",
+  "pinnedFixtureFiles": 27,
+  "mainSha256": "fbe81cc44f9d747592ebe7c2a687fe137c46a853d5f680c04bc442a3db489c11",
+  "workerSha256": "c82632c6495999fcca11ee3eaad2b56a44c48432fa1ec65384aefd2896750a49",
+  "networkIsolation": {
+    "uid": 1000,
+    "interfaces": [
+      "lo"
+    ],
+    "routes4": 0,
+    "routes6": 0,
+    "allRoutesLoopbackOnly": true
+  },
+  "browserVersion": "141.0.7390.37",
+  "checks": [
+    {
+      "name": "old page uses redirected disposable database",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "old page starts with no recorded synthetic water",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "both old app tabs show the seeded synthetic 250",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "synthetic atomic transaction writes the stored value 250 to 500",
+      "status": "PASS",
+      "values": {
+        "before": 250,
+        "after": 500
+      }
+    },
+    {
+      "name": "exact +14 old tab still displays its stale 250 after the other writer",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "reopened +14 UI and stored synthetic value both show 500",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "all three loaded main scripts match the pinned archived +14",
+      "status": "PASS",
+      "values": {}
+    }
+  ],
+  "risks": [
+    {
+      "name": "unmodified +14 stale action overwrites the synthetic atomic increment",
+      "status": "RISK_REPRODUCED",
+      "values": {
+        "seed": 250,
+        "syntheticAtomicAdd": 250,
+        "oldUiAdd": 250,
+        "expected": 750,
+        "actual": 500,
+        "oldWriteCommitted": true
+      }
+    }
+  ],
+  "loaded": [
+    {
+      "page": "old-tab",
+      "sha256": "fbe81cc44f9d747592ebe7c2a687fe137c46a853d5f680c04bc442a3db489c11",
+      "fromServiceWorker": false
+    },
+    {
+      "page": "atomic-observer-tab",
+      "sha256": "fbe81cc44f9d747592ebe7c2a687fe137c46a853d5f680c04bc442a3db489c11",
+      "fromServiceWorker": true
+    },
+    {
+      "page": "reopened-old-tab",
+      "sha256": "fbe81cc44f9d747592ebe7c2a687fe137c46a853d5f680c04bc442a3db489c11",
+      "fromServiceWorker": true
+    }
+  ],
+  "limitations": [
+    "Exact archived +14 app is used only in an isolated fresh context. Database-name redirection, write tracing and accessibility are injected for observation.",
+    "The second writer is a miniature raw IndexedDB readwrite transaction, not the real new client or a complete Hive implementation.",
+    "External routes are absent and page requests are blocked except random loopback. This specific test does not cut the loopback server or test an offline restart.",
+    "One selected order only. No real diary, accounts, production, crash, physical offline, Safari/iOS, Android, cloud sync, multiple devices or backup/restore.",
+    "The reproduced risk does not identify a safe migration, fix or release readiness."
+  ],
+  "blockedExternalPageRequests": 24
+}
