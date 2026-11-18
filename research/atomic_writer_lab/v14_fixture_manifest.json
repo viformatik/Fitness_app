@@ -1,0 +1,33 @@
+{
+  "archiveSha256": "457e5da0b9d7da6d55e29c712428b52a84d8b626a4c7af39a3501cdcb4d5ae02",
+  "description": "SHA-256 of each file in pinned public +14 archive; no archived bytes included",
+  "files": {
+    ".last_build_id": "611135e42383df075c09ad25741baabea9d8d94298085812c69e1b8feff02ba3",
+    "assets/AssetManifest.bin": "10791c72232a3fd92d034fda70bc1cb683836bbc7d7569e01bb8e5baa47876cb",
+    "assets/AssetManifest.bin.json": "7074293d95be262c6a08bb767c4d03c3223a2cf73bac60e06c74dfb6a6063472",
+    "assets/FontManifest.json": "cd7e03645bc44b2dd47b7cb626f51c4ecbf55a197ab77241628b47ac165fbe21",
+    "assets/NOTICES": "c6a3f861c57ac3fa3fb283230f1899b574c281777c9e779f28937686ac826462",
+    "assets/fonts/MaterialIcons-Regular.otf": "9f61266b329ca04fbd50984dd4bca9529e0ca0de24cce26cb1e39606a95c5c83",
+    "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "3d90c370aa4cf00dc57ee2b902f6652147c0f81e03e483df584a9c08b1687c9d",
+    "assets/packages/flutter_local_notifications_web/web/notifications_service_worker.js": "566f47dccc0f417f0164a3d0852334c340d0941472af43fc65ee50a314555058",
+    "assets/shaders/ink_sparkle.frag": "2dca5ab93d4ec29e963f996f3916320ba60825e9537dfb149a68008c7a16b026",
+    "assets/shaders/stretch_effect.frag": "ab412f07a5b9b50b67a885b24dbe16929738ae28630407d6490c924caf0a3220",
+    "canvaskit/canvaskit.js": "bb559f6080c7d312ac2a912b4abec9f68ff3d3022d4a603c7796b9b31460642b",
+    "canvaskit/canvaskit.wasm": "fbed517a43e82452404446683f00f2e876d835aed84410695759e67b6bb01cd3",
+    "canvaskit/chromium/canvaskit.js": "6018b12bd8ed37e6952eee72d59c1cf7ad707ccdb74a0a45190010f77edd9068",
+    "canvaskit/chromium/canvaskit.wasm": "ae8ff1d858140f7b1300ced3fa89fb8c9dce0a400a0f4f1e11f6dcfb3315fdcf",
+    "favicon.png": "7477abb02c390269214e02f6c8614acf8e3b7bccb310d1c176f05810c7ecf5b2",
+    "fitness_worker.js": "c82632c6495999fcca11ee3eaad2b56a44c48432fa1ec65384aefd2896750a49",
+    "flutter.js": "2beb1ce6b159c71540aa66030af1d7964b6a92377cc78473745e02f97b74effe",
+    "flutter_bootstrap.js": "9ef3946a6c312dc35f5f7814b136fb9b1cd0e1c5ec5701752a46baec2f03b2f6",
+    "flutter_service_worker.js": "a131df5ca46154cc4eb79044f7f5a14029c2f8bfccf8cef34e3ec3b5a9f5a88c",
+    "icons/Icon-192.png": "e31d6e508139a36f0e6d577596dc26e0e0e4ece68beb5717e137161d3dbfc4f3",
+    "icons/Icon-512.png": "028c6041a2ddb3fa674bd3a160ea69ee6fc1a46211fb4d5cb135fe25bdfbb21f",
+    "icons/Icon-maskable-192.png": "e31d6e508139a36f0e6d577596dc26e0e0e4ece68beb5717e137161d3dbfc4f3",
+    "icons/Icon-maskable-512.png": "028c6041a2ddb3fa674bd3a160ea69ee6fc1a46211fb4d5cb135fe25bdfbb21f",
+    "index.html": "372da5582453a954bd327d53074aa0c2695e7c5dc655fd9521ab6631ea22cd05",
+    "main.dart.js": "fbe81cc44f9d747592ebe7c2a687fe137c46a853d5f680c04bc442a3db489c11",
+    "manifest.json": "6f8759e3b9b58f62659517611992645b9ef0a3d00aaa5809be9b6c6fbb3ffdd0",
+    "version.json": "52ecc8aa6294dfcdf190c4fd7082f326a4deba8d5cd158413e52bad3f57aba0d"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "status": "PASS_SYNTHETIC_LOCAL_ONLY",
+  "checks": [
+    {
+      "name": "v1 and v2 installed only in a random synthetic database",
+      "status": "PASS"
+    },
+    {
+      "name": "anon cannot reserve actor quota directly",
+      "status": "PASS"
+    },
+    {
+      "name": "anon cannot reserve global quota directly",
+      "status": "PASS"
+    },
+    {
+      "name": "authenticated cannot reserve actor quota directly",
+      "status": "PASS"
+    },
+    {
+      "name": "authenticated cannot reserve global quota directly",
+      "status": "PASS"
+    },
+    {
+      "name": "service role has no direct read grant for fitness_food_search_actor_budget_v2",
+      "status": "PASS"
+    },
+    {
+      "name": "service role has no direct read grant for fitness_off_search_budget_v1",
+      "status": "PASS"
+    },
+    {
+      "name": "RLS enabled on both private budget tables",
+      "status": "PASS"
+    },
+    {
+      "name": "null, malformed, upper-case and wrong-length hashes fail closed",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid hashes create no pseudonym records",
+      "status": "PASS"
+    },
+    {
+      "name": "first two searches allowed; third for same actor denied",
+      "status": "PASS"
+    },
+    {
+      "name": "different verified actor has an independent window",
+      "status": "PASS"
+    },
+    {
+      "name": "denial does not add records",
+      "status": "PASS"
+    },
+    {
+      "name": "window does not reset after one calendar minute",
+      "status": "PASS"
+    },
+    {
+      "name": "expired actor reservations release capacity",
+      "status": "PASS"
+    },
+    {
+      "name": "expired actor records are cleaned on a later request",
+      "status": "PASS"
+    },
+    {
+      "name": "20 concurrent calls for one actor allow exactly two",
+      "status": "PASS"
+    },
+    {
+      "name": "only two actor rows remain after concurrent reservations",
+      "status": "PASS"
+    },
+    {
+      "name": "24 mixed upstream calls share exactly eight reservations",
+      "status": "PASS"
+    },
+    {
+      "name": "both upstream kinds share a single global cap",
+      "status": "PASS"
+    }
+  ],
+  "passed": 20,
+  "failure": null,
+  "database": "food_security_synthetic_2de56503921c",
+  "v1SqlSha256": "148e919d7b8cc247856529db963cc76c42da5dee4a3e122eba6f150a6c127b81",
+  "v2SqlSha256": "d72677186df1e32ce6dcbe2b7e82142fe184f242fef324c398feaa2a91cea650",
+  "scriptSha256": "3d743f3b9b30fb2e3ec3669d248a6eb7190e306bfed513bb3b8c5670fa88ca52",
+  "limitations": [
+    "Synthetic Unix-socket-only local PostgreSQL, not live Supabase Auth/PostgREST or production.",
+    "Actor HMAC calculation and authenticated identity were tested separately in a no-network Deno harness.",
+    "Budget does not prevent many valid accounts from exhausting the shared capacity or other apps sharing egress.",
+    "Expired pseudonyms can remain until the next reservation; no personal data or real diary used."
+  ]
+}

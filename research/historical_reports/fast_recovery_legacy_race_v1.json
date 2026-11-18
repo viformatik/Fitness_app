@@ -1,0 +1,87 @@
+{
+  "status": "RISK_REPRODUCED_SYNTHETIC_NOT_A_RELEASE",
+  "browserVersion": "141.0.7390.37",
+  "checks": [
+    {
+      "name": "новая вкладка загрузила именно cloudless +41 с тестовым предупреждением",
+      "status": "PASS"
+    },
+    {
+      "name": "новый изолированный профиль не содержит воды",
+      "status": "PASS"
+    },
+    {
+      "name": "новая вкладка записала 250 мл, данные прочитаны из IDB",
+      "status": "PASS"
+    },
+    {
+      "name": "локальный сервер переключил только тестовые статические файлы",
+      "status": "PASS"
+    },
+    {
+      "name": "поздняя старая вкладка запустила точный архив +14",
+      "status": "PASS"
+    },
+    {
+      "name": "поздняя старая вкладка прочитала ранее сохранённые 250 мл",
+      "status": "PASS"
+    },
+    {
+      "name": "старая вкладка записала свои дополнительные 250 мл",
+      "status": "PASS"
+    },
+    {
+      "name": "новая вкладка всё ещё показывает устаревшие 250 мл",
+      "status": "PASS"
+    },
+    {
+      "name": "после отдельного перезапуска старый клиент видит сохранённые 500 мл",
+      "status": "PASS"
+    },
+    {
+      "name": "не было необработанных ошибок страницы",
+      "status": "PASS"
+    }
+  ],
+  "risks": [
+    {
+      "name": "после трёх действий по 250 мл в IDB осталось 500 вместо 750",
+      "status": "RISK_REPRODUCED"
+    }
+  ],
+  "failures": [],
+  "errors": [],
+  "blockedHosts": [],
+  "captures": [
+    {
+      "label": "new",
+      "status": 200,
+      "sha256": "ef67b92f1c6a9cc2559674986fd72b25b7a067b63d1ceb87d4e698a24deedf1f",
+      "error": null
+    },
+    {
+      "label": "legacy",
+      "status": 200,
+      "sha256": "fbe81cc44f9d747592ebe7c2a687fe137c46a853d5f680c04bc442a3db489c11",
+      "error": null
+    },
+    {
+      "label": "legacy",
+      "status": 200,
+      "sha256": "fbe81cc44f9d747592ebe7c2a687fe137c46a853d5f680c04bc442a3db489c11",
+      "error": null
+    }
+  ],
+  "sha256": {
+    "oldMain": "fbe81cc44f9d747592ebe7c2a687fe137c46a853d5f680c04bc442a3db489c11",
+    "newMain": "ef67b92f1c6a9cc2559674986fd72b25b7a067b63d1ceb87d4e698a24deedf1f",
+    "checks/fast_recovery_legacy_race_v1.cjs": "e55852817d0c9bc274701b7ecf242e746e0f98350b6197c597106fc1c60dcf98",
+    "checks/serve_fast_recovery_legacy_race_v1.py": "17b7f16e7f693b867352c421ac840c3eb5834b4a3ff7241f985f45550fedfa1d"
+  },
+  "limitations": [
+    "Fresh disposable Chromium storage, only synthetic water and loopback; service workers disabled.",
+    "Shows one late archived +14 tab bypassing participating +41 guard, not loss of any actual user data.",
+    "Expected 750 reflects three synthetic actions; the persisted 500 cannot identify which intent was lost.",
+    "No actual cloud, real diary, production, backup, physical Android or release was involved."
+  ]
+}

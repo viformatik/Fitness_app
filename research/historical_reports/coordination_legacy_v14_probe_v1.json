@@ -1,0 +1,79 @@
+{
+  "status": "PARTIAL_RESEARCH_NOT_RELEASE",
+  "checks": [
+    {
+      "name": "before archived +14 opens, enumeration sees no old app window",
+      "status": "PASS"
+    },
+    {
+      "name": "late window loads the byte-verified +14 Flutter artifact",
+      "status": "PASS"
+    },
+    {
+      "name": "late window is archived 3.0.0+14",
+      "status": "PASS"
+    },
+    {
+      "name": "archived page is controlled by its own worker, not the experimental worker",
+      "status": "PASS"
+    },
+    {
+      "name": "the first +14 action is committed to disposable v1 IDB",
+      "status": "PASS"
+    },
+    {
+      "name": "post-check sees the newly opened archived page",
+      "status": "PASS"
+    },
+    {
+      "name": "archived +14 connection blocks the version-2 upgrade in this scenario",
+      "status": "PASS"
+    },
+    {
+      "name": "old interface accepts another artificial action while upgrade is blocked",
+      "status": "PASS"
+    },
+    {
+      "name": "upgrade completes only after the old page closes",
+      "status": "PASS"
+    },
+    {
+      "name": "both synthetic old actions are visible after the v2 upgrade",
+      "status": "PASS"
+    },
+    {
+      "name": "no IDB object stores were added or removed by the experimental version bump",
+      "status": "PASS"
+    },
+    {
+      "name": "old v1 open is rejected after the test version bump",
+      "status": "PASS"
+    }
+  ],
+  "risks": [
+    {
+      "name": "unmodified offline rollback is incompatible with the v2 fixture",
+      "status": "RISK_REPRODUCED",
+      "detail": "The exact v1 open returns VersionError; no rollback mechanism has been supplied."
+    }
+  ],
+  "skips": [],
+  "failures": [],
+  "observations": {
+    "oldController": "http://127.0.0.1:37087/fitness_worker.js",
+    "firstUpgradePhase": "blocked",
+    "pageErrors": []
+  },
+  "blockedHosts": [
+    "fonts.gstatic.com"
+  ],
+  "sourceSha256": "c213fc1008d67226c4e50c34c4b233a2ca25e32c23f31606ddedc92bf572f94c",
+  "oldMainSha256": "fbe81cc44f9d747592ebe7c2a687fe137c46a853d5f680c04bc442a3db489c11",
+  "limitations": [
+    "Disposable Chromium/Linux only; archived +14 is real static code but all origin, storage and actions are synthetic.",
+    "Service-worker enumeration and database upgrades are not one atomic operation; bfcache, crash, slow writes, late opens, multiple origins and partitions remain unproven.",
+    "Version bump was performed only on the disposable fixture database; it breaks unadapted legacy/offline rollback.",
+    "The candidate +41 app, real backup, live auth/sync, physical Android and Safari/iOS were not tested.",
+    "Network was restricted to loopback at the page and DNS levels; no production action was intended."
+  ]
+}

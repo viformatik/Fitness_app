@@ -1,0 +1,70 @@
+{
+  "status": "PASS_SYNTHETIC_LOCAL_ONLY",
+  "checks": [
+    {
+      "name": "local candidate installed only in random synthetic DB",
+      "status": "PASS"
+    },
+    {
+      "name": "anon cannot call privileged budget RPC",
+      "status": "PASS"
+    },
+    {
+      "name": "authenticated cannot call privileged budget RPC",
+      "status": "PASS"
+    },
+    {
+      "name": "service role has no direct table grant",
+      "status": "PASS"
+    },
+    {
+      "name": "unknown kinds fail closed",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid kinds consume no budget",
+      "status": "PASS"
+    },
+    {
+      "name": "first eight reservations succeed and ninth is denied",
+      "status": "PASS"
+    },
+    {
+      "name": "discovery and batch share one combined upstream budget",
+      "status": "PASS"
+    },
+    {
+      "name": "mixed search types cannot exceed the combined budget",
+      "status": "PASS"
+    },
+    {
+      "name": "rolling window does not reset at minute boundary",
+      "status": "PASS"
+    },
+    {
+      "name": "expired reservations release capacity",
+      "status": "PASS"
+    },
+    {
+      "name": "expired rows are cleaned without user data",
+      "status": "PASS"
+    },
+    {
+      "name": "24 concurrent callers admit exactly eight",
+      "status": "PASS"
+    },
+    {
+      "name": "concurrent reservations leave exactly eight rows",
+      "status": "PASS"
+    }
+  ],
+  "passed": 14,
+  "failure": null,
+  "database": "off_budget_synthetic_c229d8c0b847",
+  "sqlSha256": "e0b7a0ce1f23471a3aba2f822ff85fd2c596280372c5c880603bde225f07b448",
+  "limitations": [
+    "Local PostgreSQL with synthetic roles only, not Supabase Auth/PostgREST or deployment.",
+    "Other apps can share an egress IP; reserve timing does not prove the external service will accept requests.",
+    "The test cluster has Unix sockets only, contains no user data, and is not a backup."
+  ]
+}

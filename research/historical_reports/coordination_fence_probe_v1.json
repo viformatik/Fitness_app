@@ -1,0 +1,100 @@
+{
+  "status": "PARTIAL_RESEARCH_NOT_RELEASE",
+  "checks": [
+    {
+      "name": "old fixture opens the isolated v1 database",
+      "status": "PASS"
+    },
+    {
+      "name": "initial artificial write committed",
+      "status": "PASS"
+    },
+    {
+      "name": "test service worker activated",
+      "status": "PASS"
+    },
+    {
+      "name": "enumeration sees an already-open old window",
+      "status": "PASS"
+    },
+    {
+      "name": "v2 request waits while the old connection remains open",
+      "status": "PASS"
+    },
+    {
+      "name": "old synthetic page can finish a write while upgrade waits",
+      "status": "PASS"
+    },
+    {
+      "name": "committed old value survives the upgrade",
+      "status": "PASS"
+    },
+    {
+      "name": "a later v1 open is rejected after the v2 fence",
+      "status": "PASS"
+    },
+    {
+      "name": "before the race, no old window is enumerated",
+      "status": "PASS"
+    },
+    {
+      "name": "old window opened v1 after the pre-check",
+      "status": "PASS"
+    },
+    {
+      "name": "its artificial value was committed",
+      "status": "PASS"
+    },
+    {
+      "name": "auto-close allowed v2 upgrade even though the old document remains",
+      "status": "PASS"
+    },
+    {
+      "name": "a post-upgrade enumeration detects that live old window",
+      "status": "PASS"
+    },
+    {
+      "name": "the closed old connection rejects a subsequent write",
+      "status": "PASS"
+    },
+    {
+      "name": "post-check can choose to keep the new synthetic UI blocked",
+      "status": "PASS"
+    },
+    {
+      "name": "bfcache fixture starts at v1",
+      "status": "PASS"
+    },
+    {
+      "name": "bfcache fixture commits a synthetic value",
+      "status": "PASS"
+    }
+  ],
+  "risks": [],
+  "skips": [
+    {
+      "name": "actual back-forward-cache restoration",
+      "status": "SKIP",
+      "detail": "This run did not restore the old document from bfcache."
+    }
+  ],
+  "failures": [],
+  "observations": {
+    "autoCloseWriteError": "InvalidStateError",
+    "oldDocumentEnumeratedWhileAway": false,
+    "upgradeWhileAway": "done",
+    "backForward": {
+      "restored": false,
+      "pagehide": "false",
+      "events": []
+    }
+  },
+  "sha256": "26aaa845f4b5bc5c733c1371df8a936a38a12e628eba197ead95248cc5c3b977",
+  "limitations": [
+    "Single Chromium/Linux run and deliberately simple synthetic pages; not the archived Flutter app.",
+    "Service-worker client enumeration and versionchange are separate operations: races, lifecycle and browser behavior remain open.",
+    "The artificial auto-close handler is a scenario, not evidence that a particular production version behaves this way.",
+    "A v2 fence breaks unadapted old offline shells and ordinary rollback. It was applied only to a throwaway fixture database.",
+    "No real diary, Supabase, account, cloud sync, Android/iOS, Safari or production was accessed."
+  ]
+}

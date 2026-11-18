@@ -1,0 +1,130 @@
+{
+  "status": "PASS_WITH_REPRODUCED_RISKS_NOT_A_RELEASE",
+  "engine": "chromium",
+  "sourceSha256": "afb3e1c50a6f7c7cf7508280600169791f1a1a17cd7605ff08d3f2ee67f9f823",
+  "nodeVersion": "v20.20.2",
+  "networkIsolation": {
+    "uid": 1000,
+    "interfaces": [
+      "lo"
+    ],
+    "routes4": 0,
+    "routes6": 0,
+    "allRoutesLoopbackOnly": true
+  },
+  "browserVersion": "141.0.7390.37",
+  "tests": [
+    {
+      "name": "fresh loopback test pages loaded",
+      "status": "PASS",
+      "details": {
+        "pages": 3,
+        "secureContextOnLoopback": true
+      }
+    },
+    {
+      "name": "two synthetic atomic writers preserve both increments in ten sampled rounds",
+      "status": "PASS",
+      "details": {
+        "seed": 250,
+        "increments": [
+          250,
+          250
+        ],
+        "observed": [
+          750,
+          750,
+          750,
+          750,
+          750,
+          750,
+          750,
+          750,
+          750,
+          750
+        ],
+        "expected": 750
+      }
+    },
+    {
+      "name": "stale synthetic legacy-style write can erase an atomic writer action",
+      "status": "RISK_REPRODUCED",
+      "details": {
+        "initial": 250,
+        "legacySnapshot": 250,
+        "afterNew": 500,
+        "afterLegacy": 500,
+        "expectedForThreeActions": 750
+      }
+    },
+    {
+      "name": "lock-aware contender waits and then acquires after release",
+      "status": "PASS",
+      "details": {
+        "queuedBefore": true,
+        "queuedAfterWrite": true,
+        "acquiredAfter": true
+      }
+    },
+    {
+      "name": "uncooperative synthetic writer modifies IndexedDB while Web Lock is held",
+      "status": "RISK_REPRODUCED",
+      "details": {
+        "valueWhileLocked": 500,
+        "lockAwareContenderStillWaiting": true
+      }
+    },
+    {
+      "name": "v2 waits for open v1 connection and keeps synthetic value",
+      "status": "PASS",
+      "details": {
+        "blockedObserved": true,
+        "upgraded": 2,
+        "preserved": 250
+      }
+    },
+    {
+      "name": "explicit synthetic v1 reopen after v2 returns VersionError",
+      "status": "RISK_REPRODUCED",
+      "details": {
+        "legacyOpen": "VersionError"
+      }
+    },
+    {
+      "name": "separate synthetic database names allow v1 and v2 opens",
+      "status": "PASS",
+      "details": {
+        "v1Value": 500,
+        "v2Value": 500
+      }
+    },
+    {
+      "name": "same final pair can come from two increments or one copied increment",
+      "status": "RISK_REPRODUCED",
+      "details": {
+        "twoIndependentIncrements": {
+          "values": [
+            500,
+            500
+          ],
+          "intendedTotal": 750
+        },
+        "oneIncrementThenCopy": {
+          "values": [
+            500,
+            500
+          ],
+          "intendedTotal": 500
+        }
+      }
+    }
+  ],
+  "blockedExternalRequests": 0,
+  "limitations": [
+    "Synthetic miniature IndexedDB and Web Locks clients only: not the real +14 application, new application, Hive or the user diary.",
+    "Fresh non-persistent Playwright context on a random loopback origin inside a network namespace; no cloud, accounts or real data.",
+    "Only selected schedules were tested. No crash, power loss, real offline mode, Safari/iOS, Android, multi-device, Auth, sync, migration or backup/restore.",
+    "Atomic transactions and separate databases are demonstrations, not a proposed production patch or proof of a safe rollback or merge.",
+    "Two final values alone do not encode whether they arose from one copied operation or two independent operations; additional trusted provenance could change what is knowable."
+  ]
+}
