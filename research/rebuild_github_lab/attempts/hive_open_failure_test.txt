@@ -1,0 +1,4 @@
+00:00 +0: loading /home/user/FITNESS_GITHUB_WORKING/candidate/test/hive_open_failure_test.dart
+00:00 +0: a sole failed open reports to its caller, not twice to the zone
+00:00 +1: concurrent open waiters receive failure and a later retry can open
+00:00 +2: All tests passed!

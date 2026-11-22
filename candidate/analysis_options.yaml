@@ -1,0 +1,8 @@
+# The pinned third-party package is separately compiled for the web and has
+# browser-only imports that the host VM analyzer cannot resolve when scanned
+# as application source. Do not exclude any application libraries or tests.
+analyzer:
+  exclude:
+    - third_party/hive/**
+    - build/**
+    - web/**

@@ -1,0 +1,5 @@
+00:00 +0: loading /home/user/FITNESS_GITHUB_WORKING/candidate/test/local_write_queue_test.dart
+00:00 +0: direct, conditional and batched writes serialize in memory
+00:00 +1: batch freezes values and signals only after the whole write
+00:00 +2: two wrappers share single and batch queues around a real Hive box
+00:00 +3: All tests passed!

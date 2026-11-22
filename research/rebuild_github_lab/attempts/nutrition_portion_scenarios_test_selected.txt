@@ -1,0 +1,9 @@
+00:00 +0: loading /home/user/FITNESS_GITHUB_WORKING/candidate/test/nutrition_portion_scenarios_test.dart
+00:00 +0: read-only smaller, larger and omit scenarios retain full precision
+00:00 +1: unavailable or invalid figures are never offered as valid examples
+00:00 +2: oversized alternative is omitted without clipping or changing source
+00:00 +3: specific future options are selectable and never edit food at 320 px
+00:02 +4: home tip uses the recorded portion and stays on device
+00:02 +5: an indistinguishable rounded portion is not advertised as different
+00:02 +6: no manufactured options for an empty recorded diary
+00:02 +7: All tests passed!

@@ -1,0 +1,20 @@
+00:00 +0: loading /home/user/FITNESS_GITHUB_WORKING/candidate/test/backup_snapshot_safety_test.dart
+00:00 +0: an unopened store is not exported as an empty diary
+00:00 +1: snapshot export unknown value is not silently omitted from a backup
+00:00 +2: snapshot export non-finite number fails before offering JSON or CSV
+00:00 +3: snapshot export string lists are included by value, including dynamically typed lists
+00:00 +4: snapshot export pending import is not represented as a normal completed backup
+00:00 +5: snapshot export running cloud synchronization prevents a mixed local export
+00:00 +6: snapshot export export waits for an earlier direct local write to finish
+00:00 +7: snapshot export export orders after a queued diary write and excludes private keys
+00:00 +8: snapshot export export waits for import replacement and refuses stale generation
+00:00 +9: snapshot export export waits for clear and refuses a stale generation
+00:00 +10: snapshot export a failed import rolls back before a new export
+00:00 +11: snapshot export out-of-range integers cannot silently lose browser precision
+00:00 +12: snapshot export new direct writes arriving during drain are included before capture
+00:00 +13: snapshot export a failed direct write is not exported as if it committed
+00:00 +14: snapshot export a multi-document weight update finishes before export
+00:00 +15: snapshot export sync starting while writes drain rejects the snapshot
+00:00 +16: snapshot export an empty CSV export cannot be offered as a restorable backup
+00:00 +17: snapshot export normal JSON and CSV preserve valid synthetic documents and privacy
+00:00 +18: All tests passed!

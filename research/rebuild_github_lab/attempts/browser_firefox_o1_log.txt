@@ -1,0 +1,9 @@
+{
+  "engine": "firefox",
+  "status": "FAIL_OR_INCOMPLETE_NOT_A_RELEASE",
+  "passes": 0,
+  "risks": 0,
+  "output": "/home/user/FITNESS_GITHUB_WORKING/research/rebuild_github_lab/attempts/browser_firefox_o1.json"
+}
+
+exit=1

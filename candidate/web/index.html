@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10161b">
+  <meta name="description" content="Дневник питания, воды и тренировок с местным каталогом продуктов.">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Fitness Smart">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json">
+  <title>Fitness Smart — дневник питания</title>
+  <!-- Only invalid system language tags are adapted before Flutter starts. -->
+  <script id="fitness-locale-compat">
+(() => {
+  'use strict';
+  if (typeof Intl === 'undefined' || typeof Intl.Locale !== 'function') return;
+  const nav = window.navigator;
+
+  function reader(name) {
+    let owner = nav;
+    while (owner) {
+      const descriptor = Object.getOwnPropertyDescriptor(owner, name);
+      if (descriptor) {
+        if (typeof descriptor.get === 'function') {
+          return () => descriptor.get.call(nav);
+        }
+        if (Object.prototype.hasOwnProperty.call(descriptor, 'value')) {
+          return () => descriptor.value;
+        }
+        return null;
+      }
+      owner = Object.getPrototypeOf(owner);
+    }
+    return null;
+  }
+
+  const readLanguage = reader('language');
+  const readLanguages = reader('languages');
+  if (!readLanguage || !readLanguages) return;
+  function valid(tag) {
+    if (typeof tag !== 'string' || !tag) return false;
+    try { new Intl.Locale(tag); return true; } catch (_) { return false; }
+  }
+  function safe(tag) {
+    if (valid(tag)) return tag;
+    if (typeof tag === 'string') {
+      const simplified = tag.split('@', 1)[0].split('.', 1)[0].replace(/_/g, '-');
+      if (valid(simplified)) return simplified;
+    }
+    return 'ru';
+  }
+
+  let installed = false;
+  function repairInvalidLocales() {
+    if (installed) return;
+    try {
+      const language = readLanguage(), languages = readLanguages();
+      const invalidList = languages != null &&
+        (!Array.isArray(languages) || languages.some((item) => !valid(item)));
+      if (valid(language) && !invalidList) return; // Don't patch valid browsers.
+      const ownLanguage = Object.getOwnPropertyDescriptor(nav, 'language');
+      const ownLanguages = Object.getOwnPropertyDescriptor(nav, 'languages');
+      if ((ownLanguage && !ownLanguage.configurable) ||
+          (ownLanguages && !ownLanguages.configurable) ||
+          ((!ownLanguage || !ownLanguages) && !Object.isExtensible(nav))) return;
+      Object.defineProperties(nav, {
+        language: {configurable: true, enumerable: true, get: () => safe(readLanguage())},
+        languages: {configurable: true, enumerable: true, get: () => {
+          const current = readLanguages();
+          if (current == null || (Array.isArray(current) && current.every(valid))) return current;
+          if (!Array.isArray(current)) return Object.freeze(['ru']);
+          return Object.freeze(current.map(safe));
+        }},
+      });
+      installed = true;
+    } catch (_) { /* Leave the browser untouched if its properties cannot be adapted. */ }
+  }
+
+  repairInvalidLocales();
+  // If the OS language changes while open, install the getters before Flutter's
+  // later languagechange listener runs. Once installed, they read native values
+  // dynamically rather than freezing the language at startup.
+  window.addEventListener('languagechange', repairInvalidLocales);
+})();
+  </script>
+  <style>
+    html, body { margin: 0; width: 100%; height: 100%; background: #10161b; }
+    #loading { position: fixed; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 12px; color: #edf7f2;
+      font-family: system-ui, sans-serif; z-index: 9999; pointer-events: none; }
+    #loading img { width: 86px; height: 86px; border-radius: 24px; }
+    #loading strong { font-size: 20px; letter-spacing: -.3px; }
+    #loading span { color: #9bacaa; font-size: 14px; }
+    #loading .spinner { width: 25px; height: 25px; border: 3px solid #2b403b;
+      border-top-color: #52eab3; border-radius: 50%; animation: turn 1s linear infinite; }
+    #loading.guard-message { box-sizing: border-box; padding: 24px; overflow: auto;
+      background: #10161b; pointer-events: auto; text-align: center; }
+    #loading.guard-message p { max-width: 34rem; margin: 0; color: #c5d3d0;
+      font-size: 15px; line-height: 1.55; }
+    #loading.guard-message button { border: 0; border-radius: 14px; padding: 13px 20px;
+      background: #52eab3; color: #10251d; font: 600 15px system-ui, sans-serif;
+      cursor: pointer; max-width: 100%; }
+    #loading.guard-message button.guard-secondary { background: #263631; color: #edf7f2; }
+    #loading.guard-message button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+    @keyframes turn { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { #loading .spinner { animation: none; } }
+  </style>
+</head>
+<body>
+  <div id="loading" role="status" aria-label="Загрузка Fitness Smart">
+    <img src="icons/Icon-192.png" alt="">
+    <strong>Fitness Smart</strong>
+    <span>Ваш дневник питания</span>
+    <div class="spinner" aria-hidden="true"></div>
+  </div>
+  <script>
+    (() => {
+      let deferredInstall = null;
+      window.addEventListener('beforeinstallprompt', (event) => {
+        event.preventDefault();
+        deferredInstall = event;
+      });
+      window.addEventListener('appinstalled', () => { deferredInstall = null; });
+      window.fitnessInstall = {
+        canInstall: () => deferredInstall !== null,
+        isInstalled: () => window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true,
+        requestInstall: async () => {
+          if (!deferredInstall) return 'unavailable';
+          const prompt = deferredInstall;
+          deferredInstall = null;
+          try {
+            await prompt.prompt();
+            const choice = await prompt.userChoice;
+            return choice && choice.outcome === 'accepted' ? 'accepted' : 'dismissed';
+          } catch (_) { return 'unavailable'; }
+        },
+      };
+      window.addEventListener('flutter-first-frame', () => {
+        const loading = document.getElementById('loading');
+        // Flutter can finish its first frame after the lock has been lost.
+        // Never uncover that now-retired in-memory diary.
+        if (loading && window.fitnessGuardRetired !== true) loading.remove();
+      });
+      // A missing guard must never fall through to an unprotected Flutter boot.
+      window.fitnessGuardLoadError = () => {
+        const loading = document.getElementById('loading');
+        if (!loading) return;
+        loading.classList.add('guard-message');
+        loading.setAttribute('role', 'alert');
+        loading.setAttribute('aria-label', 'Не удалось загрузить защиту дневника');
+        loading.replaceChildren();
+        const title = document.createElement('strong');
+        title.textContent = 'Не удалось загрузить защиту дневника';
+        const message = document.createElement('p');
+        message.textContent = 'Проверьте подключение и повторите запуск. Не очищайте данные браузера.';
+        const retry = document.createElement('button');
+        retry.type = 'button';
+        retry.textContent = 'Проверить снова';
+        retry.addEventListener('click', () => window.location.reload());
+        loading.append(title, message, retry);
+      };
+      // The synthetic guard alone may register the worker, after it checks
+      // the loopback host. No independent registration on arbitrary origins.
+    })();
+  </script>
+  <!-- Flutter may start only after the diary's cooperative browser lock. -->
+  <script src="fitness_tab_guard.js" onerror="window.fitnessGuardLoadError()"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+[1/1] Web SDK                                                    2,458ms
+The --pwa-strategy option is deprecated and will be removed in a future Flutter release.
+For more information, see: https://github.com/flutter/flutter/issues/156910
+Compiling lib/main.dart for the Web...                          
+[INTERRUPTED: stopped after prolonged memory pressure; no current build or result claimed.]

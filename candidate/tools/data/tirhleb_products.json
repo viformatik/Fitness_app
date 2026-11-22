@@ -1,0 +1,848 @@
+[
+  {
+    "name": "Батон \"Витебский\"",
+    "calories": 184.0,
+    "protein": 5.2,
+    "fat": 0.9,
+    "carbs": 38.2,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%91%D0%B0%D1%82%D0%BE%D0%BD_%D0%92%D0%B8%D1%82%D0%B5%D0%B1%D1%81%D0%BA%D0%B8%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Батон \"Гречневый диабетический\"",
+    "calories": 214.0,
+    "protein": 6.9,
+    "fat": 1.3,
+    "carbs": 43.0,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%91%D0%B0%D1%82%D0%BE%D0%BD_%D0%93%D1%80%D0%B5%D1%87%D0%BD%D0%B5%D0%B2%D1%8B%D0%B9_%D0%B4%D0%B8%D0%B0%D0%B1%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Батон \"Отрубной\"",
+    "calories": 215.7,
+    "protein": 7.6,
+    "fat": 1.1,
+    "carbs": 42.9,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%91%D0%B0%D1%82%D0%BE%D0%BD_%D0%9E%D1%82%D1%80%D1%83%D0%B1%D0%BD%D0%BE%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Батон \"Фирменный\"",
+    "calories": 218.0,
+    "protein": 6.9,
+    "fat": 0.8,
+    "carbs": 44.9,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%91%D0%B0%D1%82%D0%BE%D0%BD_%D0%A4%D0%B8%D1%80%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Батон \"5 злаков\"",
+    "calories": 221.5,
+    "protein": 8.1,
+    "fat": 3.0,
+    "carbs": 39.7,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%91%D0%B0%D1%82%D0%BE%D0%BD_5_%D0%B7%D0%BB%D0%B0%D0%BA%D0%BE%D0%B2/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Булка \"Славянская\", 1 сорт",
+    "calories": 216.39,
+    "protein": 7.01,
+    "fat": 0.87,
+    "carbs": 44.19,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%91%D1%83%D0%BB%D0%BA%D0%B0_%D0%A1%D0%BB%D0%B0%D0%B2%D1%8F%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_1_%D1%81%D0%BE%D1%80%D1%82/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Булка \"Столовая\"",
+    "calories": 205.7,
+    "protein": 7.3,
+    "fat": 1.1,
+    "carbs": 40.9,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%91%D1%83%D0%BB%D0%BA%D0%B0_%D0%A1%D1%82%D0%BE%D0%BB%D0%BE%D0%B2%D0%B0%D1%8F/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Булочка \"Детская\"",
+    "calories": 268.0,
+    "protein": 5.5,
+    "fat": 5.5,
+    "carbs": 50.3,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%91%D1%83%D0%BB%D0%BE%D1%87%D0%BA%D0%B0_%D0%94%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1%8F/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Калач \"Болгарский\"",
+    "calories": 276.0,
+    "protein": 7.2,
+    "fat": 8.0,
+    "carbs": 44.0,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9A%D0%B0%D0%BB%D0%B0%D1%87_%D0%91%D0%BE%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B8%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Калач \"Молдавский\" 0.3",
+    "calories": 230.0,
+    "protein": 6.7,
+    "fat": 2.7,
+    "carbs": 44.0,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9A%D0%B0%D0%BB%D0%B0%D1%87_%D0%9C%D0%BE%D0%BB%D0%B4%D0%B0%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_0.3/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Калач \"Молдавский\" 0.6",
+    "calories": 232.0,
+    "protein": 6.7,
+    "fat": 2.8,
+    "carbs": 44.3,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9A%D0%B0%D0%BB%D0%B0%D1%87_%D0%9C%D0%BE%D0%BB%D0%B4%D0%B0%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_0.6/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Калач \"Рождественский\"",
+    "calories": 231.0,
+    "protein": 6.7,
+    "fat": 2.7,
+    "carbs": 44.4,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9A%D0%B0%D0%BB%D0%B0%D1%87_%D0%A0%D0%BE%D0%B6%D0%B4%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Калач \"Русский\"",
+    "calories": 234.0,
+    "protein": 6.0,
+    "fat": 8.2,
+    "carbs": 38.3,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9A%D0%B0%D0%BB%D0%B0%D1%87_%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Калач \"Сдобный\"",
+    "calories": 220.0,
+    "protein": 5.7,
+    "fat": 2.2,
+    "carbs": 44.0,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9A%D0%B0%D0%BB%D0%B0%D1%87_%D0%A1%D0%B4%D0%BE%D0%B1%D0%BD%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Калач \"Славный\"",
+    "calories": 279.0,
+    "protein": 5.0,
+    "fat": 9.6,
+    "carbs": 46.4,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9A%D0%B0%D0%BB%D0%B0%D1%87_%D0%A1%D0%BB%D0%B0%D0%B2%D0%BD%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Калач \"Юбилейный\"",
+    "calories": 229.0,
+    "protein": 6.4,
+    "fat": 3.4,
+    "carbs": 42.7,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9A%D0%B0%D0%BB%D0%B0%D1%87_%D0%AE%D0%B1%D0%B8%D0%BB%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Каравай \"Свадебный\" (Заказной)",
+    "calories": 238.3,
+    "protein": 6.2,
+    "fat": 4.6,
+    "carbs": 42.6,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9A%D0%B0%D1%80%D0%B0%D0%B2%D0%B0%D0%B9_%D0%A1%D0%B2%D0%B0%D0%B4%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9_%D0%97%D0%B0%D0%BA%D0%B0%D0%B7%D0%BD%D0%BE%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Круассан с ванильным кремом",
+    "calories": 309.0,
+    "protein": 5.3,
+    "fat": 10.9,
+    "carbs": 45.6,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9A%D1%80%D1%83%D0%B0%D1%81%D1%81%D0%B0%D0%BD_%D1%81_%D0%B2%D0%B0%D0%BD%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC_%D0%BA%D1%80%D0%B5%D0%BC%D0%BE%D0%BC/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Круассан с шоколадным кремом",
+    "calories": 303.0,
+    "protein": 5.5,
+    "fat": 11.8,
+    "carbs": 45.8,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9A%D1%80%D1%83%D0%B0%D1%81%D1%81%D0%B0%D0%BD_%D1%81_%D1%88%D0%BE%D0%BA%D0%BE%D0%BB%D0%B0%D0%B4%D0%BD%D1%8B%D0%BC_%D0%BA%D1%80%D0%B5%D0%BC%D0%BE%D0%BC/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Кулич \"Воскресный\"",
+    "calories": 299.0,
+    "protein": 5.5,
+    "fat": 12.7,
+    "carbs": 41.3,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9A%D1%83%D0%BB%D0%B8%D1%87_%D0%92%D0%BE%D1%81%D0%BA%D1%80%D0%B5%D1%81%D0%BD%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Кулич \"С шоколадной начинкой\"",
+    "calories": 280.0,
+    "protein": 5.6,
+    "fat": 6.0,
+    "carbs": 50.9,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9A%D1%83%D0%BB%D0%B8%D1%87_%D0%A1_%D1%88%D0%BE%D0%BA%D0%BE%D0%BB%D0%B0%D0%B4%D0%BD%D0%BE%D0%B9_%D0%BD%D0%B0%D1%87%D0%B8%D0%BD%D0%BA%D0%BE%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Маффины \"Абрикосовые\"",
+    "calories": 444.0,
+    "protein": 5.8,
+    "fat": 22.6,
+    "carbs": 55.4,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9C%D0%B0%D1%84%D1%84%D0%B8%D0%BD%D1%8B_%D0%90%D0%B1%D1%80%D0%B8%D0%BA%D0%BE%D1%81%D0%BE%D0%B2%D1%8B%D0%B5/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Маффины \"Ванильные\"",
+    "calories": 444.7,
+    "protein": 6.3,
+    "fat": 23.0,
+    "carbs": 54.0,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9C%D0%B0%D1%84%D1%84%D0%B8%D0%BD%D1%8B_%D0%92%D0%B0%D0%BD%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Маффины \"Шоколадные\"",
+    "calories": 417.1,
+    "protein": 6.3,
+    "fat": 22.3,
+    "carbs": 48.9,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9C%D0%B0%D1%84%D1%84%D0%B8%D0%BD%D1%8B_%D0%A8%D0%BE%D0%BA%D0%BE%D0%BB%D0%B0%D0%B4%D0%BD%D1%8B%D0%B5/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Маффины с начинкой \"Орео\"",
+    "calories": 377.0,
+    "protein": 4.5,
+    "fat": 17.5,
+    "carbs": 50.7,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9C%D0%B0%D1%84%D1%84%D0%B8%D0%BD%D1%8B_%D1%81_%D0%BD%D0%B0%D1%87%D0%B8%D0%BD%D0%BA%D0%BE%D0%B9_%D0%9E%D1%80%D0%B5%D0%BE/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Печенье \"Кукурузное\"",
+    "calories": 490.0,
+    "protein": 5.5,
+    "fat": 26.3,
+    "carbs": 58.1,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%D0%B5_%D0%9A%D1%83%D0%BA%D1%83%D1%80%D1%83%D0%B7%D0%BD%D0%BE%D0%B5/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Печенье \"Лимонное наслаждение\"",
+    "calories": 419.0,
+    "protein": 7.0,
+    "fat": 15.8,
+    "carbs": 64.0,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%D0%B5_%D0%9B%D0%B8%D0%BC%D0%BE%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BD%D0%B0%D1%81%D0%BB%D0%B0%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пирог \"Ириска\"",
+    "calories": 335.0,
+    "protein": 7.3,
+    "fat": 13.5,
+    "carbs": 46.9,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B8%D1%80%D0%BE%D0%B3_%D0%98%D1%80%D0%B8%D1%81%D0%BA%D0%B0/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пирог \"Наполеон\"",
+    "calories": 365.0,
+    "protein": 4.6,
+    "fat": 21.7,
+    "carbs": 37.1,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B8%D1%80%D0%BE%D0%B3_%D0%9D%D0%B0%D0%BF%D0%BE%D0%BB%D0%B5%D0%BE%D0%BD/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пирог \"Чокырлия\"",
+    "calories": 328.0,
+    "protein": 5.5,
+    "fat": 12.9,
+    "carbs": 48.2,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B8%D1%80%D0%BE%D0%B3_%D0%A7%D0%BE%D0%BA%D1%8B%D1%80%D0%BB%D0%B8%D1%8F/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пирог \"Шедевр\"",
+    "calories": 340.0,
+    "protein": 5.5,
+    "fat": 14.4,
+    "carbs": 47.9,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B8%D1%80%D0%BE%D0%B3_%D0%A8%D0%B5%D0%B4%D0%B5%D0%B2%D1%80/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пирожное \"Венеция\"",
+    "calories": 346.0,
+    "protein": 2.9,
+    "fat": 17.2,
+    "carbs": 45.2,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B8%D1%80%D0%BE%D0%B6%D0%BD%D0%BE%D0%B5_%D0%92%D0%B5%D0%BD%D0%B5%D1%86%D0%B8%D1%8F/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пирожное \"Винни Пух\"",
+    "calories": 395.0,
+    "protein": 6.3,
+    "fat": 21.1,
+    "carbs": 46.3,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B8%D1%80%D0%BE%D0%B6%D0%BD%D0%BE%D0%B5_%D0%92%D0%B8%D0%BD%D0%BD%D0%B8_%D0%9F%D1%83%D1%85-00001/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пирожное \"Грильяжное\"",
+    "calories": 442.0,
+    "protein": 11.3,
+    "fat": 27.3,
+    "carbs": 38.4,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B8%D1%80%D0%BE%D0%B6%D0%BD%D0%BE%D0%B5_%D0%93%D1%80%D0%B8%D0%BB%D1%8C%D1%8F%D0%B6%D0%BD%D0%BE%D0%B5/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пирожное \"Заварное\"",
+    "calories": 326.0,
+    "protein": 6.0,
+    "fat": 19.2,
+    "carbs": 32.5,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B8%D1%80%D0%BE%D0%B6%D0%BD%D0%BE%D0%B5_%D0%97%D0%B0%D0%B2%D0%B0%D1%80%D0%BD%D0%BE%D0%B5/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пирожное \"Картошка\"",
+    "calories": 393.0,
+    "protein": 7.0,
+    "fat": 20.0,
+    "carbs": 47.2,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B8%D1%80%D0%BE%D0%B6%D0%BD%D0%BE%D0%B5_%D0%9A%D0%B0%D1%80%D1%82%D0%BE%D1%88%D0%BA%D0%B0/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пирожное \"Корзиночка\"",
+    "calories": 369.5,
+    "protein": 4.2,
+    "fat": 11.6,
+    "carbs": 62.8,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B8%D1%80%D0%BE%D0%B6%D0%BD%D0%BE%D0%B5_%D0%9A%D0%BE%D1%80%D0%B7%D0%B8%D0%BD%D0%BE%D1%87%D0%BA%D0%B0/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пирожное \"Наполеон\"",
+    "calories": 348.0,
+    "protein": 4.4,
+    "fat": 19.6,
+    "carbs": 37.9,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B8%D1%80%D0%BE%D0%B6%D0%BD%D0%BE%D0%B5_%D0%9D%D0%B0%D0%BF%D0%BE%D0%BB%D0%B5%D0%BE%D0%BD/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пирожное \"Нежность\"",
+    "calories": 307.0,
+    "protein": 5.5,
+    "fat": 14.3,
+    "carbs": 40.2,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B8%D1%80%D0%BE%D0%B6%D0%BD%D0%BE%D0%B5_%D0%9D%D0%B5%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пирожное \"Постное с апельсином\"",
+    "calories": 189.2,
+    "protein": 1.7,
+    "fat": 6.7,
+    "carbs": 31.2,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B8%D1%80%D0%BE%D0%B6%D0%BD%D0%BE%D0%B5_%D0%9F%D0%BE%D1%81%D1%82%D0%BD%D0%BE%D0%B5_%D1%81_%D0%B0%D0%BF%D0%B5%D0%BB%D1%8C%D1%81%D0%B8%D0%BD%D0%BE%D0%BC/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пирожное \"Постное с бананом\"",
+    "calories": 181.5,
+    "protein": 1.4,
+    "fat": 5.1,
+    "carbs": 33.2,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B8%D1%80%D0%BE%D0%B6%D0%BD%D0%BE%D0%B5_%D0%9F%D0%BE%D1%81%D1%82%D0%BD%D0%BE%D0%B5_%D1%81_%D0%B1%D0%B0%D0%BD%D0%B0%D0%BD%D0%BE%D0%BC/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пирожное \"Постное с вишней\"",
+    "calories": 146.8,
+    "protein": 1.2,
+    "fat": 4.0,
+    "carbs": 26.8,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B8%D1%80%D0%BE%D0%B6%D0%BD%D0%BE%D0%B5_%D0%9F%D0%BE%D1%81%D1%82%D0%BD%D0%BE%D0%B5_%D1%81_%D0%B2%D0%B8%D1%88%D0%BD%D0%B5%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пирожное \"Смайлик\"",
+    "calories": 397.0,
+    "protein": 6.1,
+    "fat": 19.2,
+    "carbs": 50.6,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B8%D1%80%D0%BE%D0%B6%D0%BD%D0%BE%D0%B5_%D0%A1%D0%BC%D0%B0%D0%B9%D0%BB%D0%B8%D0%BA/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пирожное \"Трубочка со взбитыми сливками\"",
+    "calories": 462.0,
+    "protein": 4.9,
+    "fat": 29.7,
+    "carbs": 42.6,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B8%D1%80%D0%BE%D0%B6%D0%BD%D0%BE%D0%B5_%D0%A2%D1%80%D1%83%D0%B1%D0%BE%D1%87%D0%BA%D0%B0_%D1%81%D0%BE_%D0%B2%D0%B7%D0%B1%D0%B8%D1%82%D1%8B%D0%BC%D0%B8_%D1%81%D0%BB%D0%B8%D0%B2%D0%BA%D0%B0%D0%BC%D0%B8/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пирожное \"Трубочка с белковым кремом\"",
+    "calories": 459.0,
+    "protein": 5.7,
+    "fat": 24.7,
+    "carbs": 52.8,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%B8%D1%80%D0%BE%D0%B6%D0%BD%D0%BE%D0%B5_%D0%A2%D1%80%D1%83%D0%B1%D0%BE%D1%87%D0%BA%D0%B0_%D1%81_%D0%B1%D0%B5%D0%BB%D0%BA%D0%BE%D0%B2%D1%8B%D0%BC_%D0%BA%D1%80%D0%B5%D0%BC%D0%BE%D0%BC/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Полуфабрикат \"Пита\"",
+    "calories": 224.6,
+    "protein": 6.7,
+    "fat": 2.0,
+    "carbs": 43.9,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D0%BE%D0%BB%D1%83%D1%84%D0%B0%D0%B1%D1%80%D0%B8%D0%BA%D0%B0%D1%82_%D0%9F%D0%B8%D1%82%D0%B0/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пряник \"Имбирный\" подарочный",
+    "calories": 406.0,
+    "protein": 5.4,
+    "fat": 10.5,
+    "carbs": 69.8,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D1%80%D1%8F%D0%BD%D0%B8%D0%BA_%D0%98%D0%BC%D0%B1%D0%B8%D1%80%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B4%D0%B0%D1%80%D0%BE%D1%87%D0%BD%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Пряник \"Мятный\"",
+    "calories": 343.0,
+    "protein": 7.0,
+    "fat": 0.5,
+    "carbs": 77.2,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%9F%D1%80%D1%8F%D0%BD%D0%B8%D0%BA_%D0%9C%D1%8F%D1%82%D0%BD%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Рогалик Песочный \"С вишневой начинкой\"",
+    "calories": 389.2,
+    "protein": 5.3,
+    "fat": 17.4,
+    "carbs": 53.1,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A0%D0%BE%D0%B3%D0%B0%D0%BB%D0%B8%D0%BA_%D0%9F%D0%B5%D1%81%D0%BE%D1%87%D0%BD%D1%8B%D0%B9_%D0%A1_%D0%B2%D0%B8%D1%88%D0%BD%D0%B5%D0%B2%D0%BE%D0%B9_%D0%BD%D0%B0%D1%87%D0%B8%D0%BD%D0%BA%D0%BE%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Рулет ОРЕХОВЫЙ",
+    "calories": 505.8,
+    "protein": 8.6,
+    "fat": 31.5,
+    "carbs": 48.1,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A0%D1%83%D0%BB%D0%B5%D1%82_%D0%9E%D0%A0%D0%95%D0%A5%D0%9E%D0%92%D0%AB%D0%99/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Рулет \"Радужный\"",
+    "calories": 276.0,
+    "protein": 5.1,
+    "fat": 7.2,
+    "carbs": 48.2,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A0%D1%83%D0%BB%D0%B5%D1%82_%D0%A0%D0%B0%D0%B4%D1%83%D0%B6%D0%BD%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Рулет \"С халвой\"",
+    "calories": 459.0,
+    "protein": 7.7,
+    "fat": 27.8,
+    "carbs": 44.5,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A0%D1%83%D0%BB%D0%B5%D1%82_%D0%A1_%D1%85%D0%B0%D0%BB%D0%B2%D0%BE%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Слайсы \"Пшеничные глазированные\"",
+    "calories": 443.8,
+    "protein": 7.7,
+    "fat": 19.3,
+    "carbs": 59.2,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A1%D0%BB%D0%B0%D0%B9%D1%81%D1%8B_%D0%9F%D1%88%D0%B5%D0%BD%D0%B8%D1%87%D0%BD%D1%8B%D0%B5_%D0%B3%D0%BB%D0%B0%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Слойка \"Апельсинка\"",
+    "calories": 298.0,
+    "protein": 5.3,
+    "fat": 9.9,
+    "carbs": 46.4,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A1%D0%BB%D0%BE%D0%B9%D0%BA%D0%B0_%D0%90%D0%BF%D0%B5%D0%BB%D1%8C%D1%81%D0%B8%D0%BD%D0%BA%D0%B0/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Слойка \"С вишней\"",
+    "calories": 256.0,
+    "protein": 6.9,
+    "fat": 1.0,
+    "carbs": 54.5,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A1%D0%BB%D0%BE%D0%B9%D0%BA%D0%B0_%D0%A1_%D0%B2%D0%B8%D1%88%D0%BD%D0%B5%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Слойка \"С творогом\"",
+    "calories": 267.0,
+    "protein": 11.8,
+    "fat": 3.6,
+    "carbs": 46.0,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A1%D0%BB%D0%BE%D0%B9%D0%BA%D0%B0_%D0%A1_%D1%82%D0%B2%D0%BE%D1%80%D0%BE%D0%B3%D0%BE%D0%BC/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Слойка \"Яблочная\"",
+    "calories": 304.9,
+    "protein": 5.4,
+    "fat": 9.4,
+    "carbs": 48.8,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A1%D0%BB%D0%BE%D0%B9%D0%BA%D0%B0_%D0%AF%D0%B1%D0%BB%D0%BE%D1%87%D0%BD%D0%B0%D1%8F/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Тарталет \"Капучино\"",
+    "calories": 308.0,
+    "protein": 4.2,
+    "fat": 12.4,
+    "carbs": 46.2,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A2%D0%B0%D1%80%D1%82%D0%B0%D0%BB%D0%B5%D1%82_%D0%9A%D0%B0%D0%BF%D1%83%D1%87%D0%B8%D0%BD%D0%BE/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Тарталет \"Шоколадный\"",
+    "calories": 285.3,
+    "protein": 3.9,
+    "fat": 8.4,
+    "carbs": 49.5,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A2%D0%B0%D1%80%D1%82%D0%B0%D0%BB%D0%B5%D1%82_%D0%A8%D0%BE%D0%BA%D0%BE%D0%BB%D0%B0%D0%B4%D0%BD%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Торт \"Аристократ\"",
+    "calories": 309.0,
+    "protein": 5.3,
+    "fat": 14.7,
+    "carbs": 40.1,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A2%D0%BE%D1%80%D1%82_%D0%90%D1%80%D0%B8%D1%81%D1%82%D0%BE%D0%BA%D1%80%D0%B0%D1%82/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Торт \"Банановый\"",
+    "calories": 280.1,
+    "protein": 4.8,
+    "fat": 10.3,
+    "carbs": 43.2,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A2%D0%BE%D1%80%D1%82_%D0%91%D0%B0%D0%BD%D0%B0%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Торт \"Домашний с вишней\"",
+    "calories": 267.0,
+    "protein": 5.3,
+    "fat": 10.0,
+    "carbs": 39.8,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A2%D0%BE%D1%80%D1%82_%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B8%D0%B9_%D1%81_%D0%B2%D0%B8%D1%88%D0%BD%D0%B5%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Торт \"Домашний с черносливом\"",
+    "calories": 267.0,
+    "protein": 5.4,
+    "fat": 10.0,
+    "carbs": 39.7,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A2%D0%BE%D1%80%D1%82_%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B8%D0%B9_%D1%81_%D1%87%D0%B5%D1%80%D0%BD%D0%BE%D1%81%D0%BB%D0%B8%D0%B2%D0%BE%D0%BC/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Торт \"Загадка\"",
+    "calories": 214.0,
+    "protein": 4.0,
+    "fat": 10.9,
+    "carbs": 25.4,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A2%D0%BE%D1%80%D1%82_%D0%97%D0%B0%D0%B3%D0%B0%D0%B4%D0%BA%D0%B0/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Торт \"Клубничный восторг\"",
+    "calories": 271.0,
+    "protein": 4.7,
+    "fat": 10.7,
+    "carbs": 40.1,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A2%D0%BE%D1%80%D1%82_%D0%9A%D0%BB%D1%83%D0%B1%D0%BD%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D0%B2%D0%BE%D1%81%D1%82%D0%BE%D1%80%D0%B3/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Торт \"Комплимент\"",
+    "calories": 395.0,
+    "protein": 3.8,
+    "fat": 30.4,
+    "carbs": 26.8,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A2%D0%BE%D1%80%D1%82_%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B8%D0%BC%D0%B5%D0%BD%D1%82/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Торт \"Леди\"",
+    "calories": 289.0,
+    "protein": 4.9,
+    "fat": 11.6,
+    "carbs": 42.1,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A2%D0%BE%D1%80%D1%82_%D0%9B%D0%B5%D0%B4%D0%B8/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Торт \"Лесная ягода\"",
+    "calories": 290.0,
+    "protein": 3.7,
+    "fat": 13.1,
+    "carbs": 39.6,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A2%D0%BE%D1%80%D1%82_%D0%9B%D0%B5%D1%81%D0%BD%D0%B0%D1%8F_%D1%8F%D0%B3%D0%BE%D0%B4%D0%B0/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Торт \"Очарование\"",
+    "calories": 342.6,
+    "protein": 6.0,
+    "fat": 15.5,
+    "carbs": 45.7,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A2%D0%BE%D1%80%D1%82_%D0%9E%D1%87%D0%B0%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Торт \"Признание\"",
+    "calories": 319.0,
+    "protein": 4.1,
+    "fat": 16.0,
+    "carbs": 39.8,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A2%D0%BE%D1%80%D1%82_%D0%9F%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B5/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Торт \"Тайна вкуса\"",
+    "calories": 267.0,
+    "protein": 3.3,
+    "fat": 10.5,
+    "carbs": 41.3,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A2%D0%BE%D1%80%D1%82_%D0%A2%D0%B0%D0%B9%D0%BD%D0%B0_%D0%B2%D0%BA%D1%83%D1%81%D0%B0/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Торт \"Тирасполь\"",
+    "calories": 356.0,
+    "protein": 5.4,
+    "fat": 24.2,
+    "carbs": 30.1,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A2%D0%BE%D1%80%D1%82_%D0%A2%D0%B8%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%BB%D1%8C/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Торт \"Эстерхази\"",
+    "calories": 422.0,
+    "protein": 11.7,
+    "fat": 24.5,
+    "carbs": 40.3,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A2%D0%BE%D1%80%D1%82_%D0%AD%D1%81%D1%82%D0%B5%D1%80%D1%85%D0%B0%D0%B7%D0%B8/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хала \"Городская\"",
+    "calories": 243.3,
+    "protein": 6.9,
+    "fat": 2.7,
+    "carbs": 47.0,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%B0%D0%BB%D0%B0_%D0%93%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D1%8F/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Аппетитный\"",
+    "calories": 187.0,
+    "protein": 6.7,
+    "fat": 3.9,
+    "carbs": 36.9,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%90%D0%BF%D0%BF%D0%B5%D1%82%D0%B8%D1%82%D0%BD%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Апрельский\"",
+    "calories": 269.5,
+    "protein": 6.0,
+    "fat": 4.6,
+    "carbs": 50.2,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%90%D0%BF%D1%80%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Бородинский\"",
+    "calories": 183.0,
+    "protein": 5.1,
+    "fat": 1.0,
+    "carbs": 37.9,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%91%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Домашний\"",
+    "calories": 214.0,
+    "protein": 6.8,
+    "fat": 1.0,
+    "carbs": 43.8,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B8%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Любительский\"",
+    "calories": 180.0,
+    "protein": 5.5,
+    "fat": 0.9,
+    "carbs": 36.5,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%9B%D1%8E%D0%B1%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Минский с тмином\"",
+    "calories": 196.0,
+    "protein": 5.7,
+    "fat": 0.9,
+    "carbs": 40.6,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%9C%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D1%81_%D1%82%D0%BC%D0%B8%D0%BD%D0%BE%D0%BC/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Монастырский\"",
+    "calories": 181.0,
+    "protein": 5.5,
+    "fat": 0.9,
+    "carbs": 36.8,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%9C%D0%BE%D0%BD%D0%B0%D1%81%D1%82%D1%8B%D1%80%D1%81%D0%BA%D0%B8%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Особый\"",
+    "calories": 204.0,
+    "protein": 6.3,
+    "fat": 2.7,
+    "carbs": 40.3,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%9E%D1%81%D0%BE%D0%B1%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Пряный\"",
+    "calories": 210.0,
+    "protein": 6.7,
+    "fat": 2.0,
+    "carbs": 40.9,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%9F%D1%80%D1%8F%D0%BD%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Пшеничный\"",
+    "calories": 154.0,
+    "protein": 4.9,
+    "fat": 0.6,
+    "carbs": 31.3,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%9F%D1%88%D0%B5%D0%BD%D0%B8%D1%87%D0%BD%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Солодовый с изюмом\"",
+    "calories": 180.2,
+    "protein": 5.1,
+    "fat": 0.9,
+    "carbs": 37.4,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%A1%D0%BE%D0%BB%D0%BE%D0%B4%D0%BE%D0%B2%D1%8B%D0%B9_%D1%81_%D0%B8%D0%B7%D1%8E%D0%BC%D0%BE%D0%BC/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Солодовый с черносливом\"",
+    "calories": 174.0,
+    "protein": 5.1,
+    "fat": 0.9,
+    "carbs": 35.7,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%A1%D0%BE%D0%BB%D0%BE%D0%B4%D0%BE%D0%B2%D1%8B%D0%B9_%D1%81_%D1%87%D0%B5%D1%80%D0%BD%D0%BE%D1%81%D0%BB%D0%B8%D0%B2%D0%BE%D0%BC/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"С семенами льна\"",
+    "calories": 216.0,
+    "protein": 6.9,
+    "fat": 2.0,
+    "carbs": 41.0,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%A1_%D1%81%D0%B5%D0%BC%D0%B5%D0%BD%D0%B0%D0%BC%D0%B8_%D0%BB%D1%8C%D0%BD%D0%B0/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Тостовый\"",
+    "calories": 224.0,
+    "protein": 6.7,
+    "fat": 2.3,
+    "carbs": 43.9,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%A2%D0%BE%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Тостовый Фитнес\"",
+    "calories": 232.0,
+    "protein": 7.0,
+    "fat": 4.0,
+    "carbs": 41.0,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%A2%D0%BE%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B9_%D0%A4%D0%B8%D1%82%D0%BD%D0%B5%D1%81/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Традиционный\"",
+    "calories": 196.0,
+    "protein": 6.0,
+    "fat": 1.7,
+    "carbs": 37.9,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%A2%D1%80%D0%B0%D0%B4%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Трапезный\"",
+    "calories": 185.0,
+    "protein": 5.3,
+    "fat": 0.8,
+    "carbs": 38.4,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%A2%D1%80%D0%B0%D0%BF%D0%B5%D0%B7%D0%BD%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Целебный\"",
+    "calories": 182.4,
+    "protein": 5.5,
+    "fat": 0.9,
+    "carbs": 37.5,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%A6%D0%B5%D0%BB%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Цельнозерновой\"",
+    "calories": 178.0,
+    "protein": 6.8,
+    "fat": 1.3,
+    "carbs": 34.2,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%A6%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B7%D0%B5%D1%80%D0%BD%D0%BE%D0%B2%D0%BE%D0%B9/",
+    "brand": "ТХК"
+  },
+  {
+    "name": "Хлеб \"Юбилейный\"",
+    "calories": 191.0,
+    "protein": 6.1,
+    "fat": 3.9,
+    "carbs": 35.2,
+    "sourceUrl": "https://www.tirhleb.com/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%A5%D0%BB%D0%B5%D0%B1_%D0%AE%D0%B1%D0%B8%D0%BB%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9/",
+    "brand": "ТХК"
+  }
+]

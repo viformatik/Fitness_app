@@ -1,0 +1,9 @@
+hive_migration_test exit=0
+hive_open_failure_test exit=0
+local_write_queue_test exit=0
+startup_clean_path_test exit=0
+startup_store_open_failure_test exit=0
+startup_corruption_profile_test exit=0
+startup_corruption_today_test exit=0
+startup_corruption_recovery_test exit=0
+startup_recovery_export_ui_test exit=0

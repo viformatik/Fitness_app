@@ -1,0 +1,3 @@
+00:00 +0: loading /home/user/FITNESS_GITHUB_WORKING/candidate/test/backup_snapshot_ui_safety_test.dart
+00:00 +0: settings reports an unsafe snapshot without copying it
+00:02 +1: All tests passed!

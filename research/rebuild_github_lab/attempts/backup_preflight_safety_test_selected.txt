@@ -1,0 +1,9 @@
+00:00 +0: loading /home/user/FITNESS_GITHUB_WORKING/candidate/test/backup_preflight_safety_test.dart
+00:00 +0: synthetic malformed document exports but importer rejects it safely
+00:00 +1: non-mutating file preflight valid JSON and CSV survive the same importer rules and exact rows
+00:00 +2: non-mutating file preflight empty JSON remains allowed but CSV requires document rows
+00:00 +3: non-mutating file preflight bad envelopes, keys, values and broken records are not approved
+00:00 +4: non-mutating file preflight CSV missing, duplicated, invalid or changed documents are rejected
+00:00 +5: non-mutating file preflight streaming byte count matches UTF-8 for mixed and malformed Unicode
+00:00 +6: non-mutating file preflight 20 MiB limit uses UTF-8 bytes, allowing the exact boundary
+00:00 +7: All tests passed!

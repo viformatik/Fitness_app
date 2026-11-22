@@ -1,0 +1,16 @@
+00:00 +0: loading /home/user/FITNESS_GITHUB_WORKING/candidate/test/catalog_v5_test.dart
+00:00 +0: Offline catalog is Cyrillic, local and preserves exact ТХК values
+00:15 +1: Russian synonyms, filters, nutrient density and unknown values
+00:16 +2: Online catalog response rejects incomplete macros and keeps ODbL provenance
+00:17 +3: Online search uses the read-only proxy with a bounded query
+00:20 +4: Voice locale uses ru-RU on web and friendly fallback on permission error
+00:21 +5: Large photo is safely re-encoded to a small JPEG
+00:44 +5 -1: loading /home/user/FITNESS_GITHUB_WORKING/candidate/test/catalog_v5_test.dart [E]
+  Bad state: Cannot close sink while adding stream.
+  package:stream_channel/src/guarantee_channel.dart 180:7      _GuaranteeSink.close
+  package:flutter_tools/src/test/flutter_platform.dart 765:43  FlutterPlatform._startTest
+  
+One or more uncaught errors occurred shutting down:
+  Bad state: Cannot add event while adding stream.
+
+catalog_v5_test retry2 exit=124

@@ -1,0 +1,3 @@
+00:00 +0: loading /home/user/FITNESS_GITHUB_WORKING/candidate/test/startup_clean_path_test.dart
+00:00 +0: a clean startup retains the normal diary and sync binding
+01:01 +1: All tests passed!

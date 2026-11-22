@@ -1,0 +1,9 @@
+{
+  "name": "fitness-github-reconstruction-isolated-lab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Disposable-profile browser probes for the non-release synthetic reconstruction",
+  "dependencies": {
+    "playwright": "1.56.0"
+  }
+}
