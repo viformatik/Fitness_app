@@ -1,0 +1,7 @@
+{
+  "engine": "firefox",
+  "status": "PASS_WITH_REPRODUCED_RISKS_NOT_A_RELEASE",
+  "passes": 27,
+  "risks": 5,
+  "output": "/home/user/FITNESS_GITHUB_WORKING/research/sidecar_migration_lab/attempts/firefox_interleaving.json"
+}

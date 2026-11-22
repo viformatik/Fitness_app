@@ -200,6 +200,36 @@ async function modelSuite(page) {
         (await audited(src,()=>lab.stage(src,1,abortDst))).state==='STAGED_ONLY_NO_ACTIVATION' &&
         (await audited(src,()=>lab.compare(src,1,abortDst))).state==='MATCH_ONLY_NO_ACTIVATION');
 
+      // Queue a deliberately separate writer when getAllKeys succeeds, before
+      // the sibling getAll request has completed in the same readonly tx.
+      // IndexedDB must defer the overlapping writer until that read tx ends.
+      const interSrc=sourceName(),interDst=targetName(); await make(interSrc,1);
+      let injected=false, resolveWriter, rejectWriter;
+      const writerDone=new Promise((resolve,reject)=>{resolveWriter=resolve;rejectWriter=reject;});
+      const nativeKeys=IDBObjectStore.prototype.getAllKeys;
+      IDBObjectStore.prototype.getAllKeys=function(...args){
+        const request=nativeKeys.apply(this,args);
+        if(this.transaction.db.name===interSrc&&!injected){
+          injected=true;const db=this.transaction.db;
+          request.addEventListener('success',()=>{
+            try {
+              const tx=db.transaction('box','readwrite');
+              tx.objectStore('box').put(500,'water_intake_2026-10-25');
+              tx.oncomplete=resolveWriter;tx.onabort=()=>rejectWriter(tx.error||Error('fixture writer aborted'));
+            } catch(error) { rejectWriter(error); }
+          });
+        }
+        return request;
+      };
+      try {
+        await lab.stage(interSrc,1,interDst);
+        await Promise.race([writerDone,new Promise((_,reject)=>setTimeout(()=>reject(Error('fixture writer timed out')),10000))]);
+      } finally { IDBObjectStore.prototype.getAllKeys=nativeKeys; }
+      check('overlapping synthetic writer is deferred until the paired readonly snapshot completes',
+        injected && await get(interDst,1,'data','water_intake_2026-10-25')===250 &&
+        await get(interSrc,1,'box','water_intake_2026-10-25')===500 &&
+        (await lab.compare(interSrc,1,interDst)).state==='MISMATCH_NO_ACTIVATION');
+
       const raceDst=targetName();
       const race=await Promise.allSettled([lab.stage(src,1,raceDst),lab.stage(src,1,raceDst)]);
       const won=race.filter(x=>x.status==='fulfilled').length;
@@ -227,8 +257,11 @@ async function modelSuite(page) {
         tampered.state==='MISMATCH_NO_ACTIVATION' && !tampered.metadataMatches &&
         await get(abaSrc,1,'box','water_intake_2026-10-25')===250);
       check('all audited laboratory source transactions were readonly',sourceReadwrite===0);
+      // Fresh matching pair for the two-page after-match / Web Lock experiment.
+      const lateSrc=sourceName(),lateDst=targetName();
+      await make(lateSrc,1);await lab.stage(lateSrc,1,lateDst);
       window.__labOpenOldV1.close();
-      return {checks,risks,lockFixture:{source:abaSrc}};
+      return {checks,risks,lockFixture:{source:lateSrc,destination:lateDst}};
     } catch(e) {
       try { if (window.__labOpenOldV1) window.__labOpenOldV1.close(); } catch (_) {}
       return {checks,risks,error:{name:e.name||'Error',message:String(e.message||e).slice(0,500)}};
@@ -321,6 +354,10 @@ async function run() {
     },lockName);
     check('cooperating laboratory lock can be held',lockStarted);
     const lockHeld=await mp.evaluate(async name=>(await navigator.locks.query()).held.some(x=>x.name===name),lockName);
+    const beforeLateWrite=await mp.evaluate(async ({source,destination})=>
+      window.FitnessSidecarLab.compare(source,1,destination),model.lockFixture);
+    check('source and sidecar matched before the late old-writer experiment',
+      lockHeld&&beforeLateWrite.state==='MATCH_ONLY_NO_ACTIVATION');
     const lateWrite=await old.evaluate(async src=>{
       const db=await new Promise((resolve,reject)=>{const r=indexedDB.open(src,1);r.onerror=()=>reject(r.error);
         r.onupgradeneeded=()=>r.transaction.abort();r.onsuccess=()=>resolve(r.result);});
@@ -329,7 +366,12 @@ async function run() {
       finally{db.close();}
     },model.lockFixture.source);
     const lockHeldAfter=await mp.evaluate(async name=>(await navigator.locks.query()).held.some(x=>x.name===name),lockName);
-    risk('a nonparticipating old writer commits while a laboratory Web Lock is held',lockHeld&&lateWrite&&lockHeldAfter);
+    const afterLateWrite=await mp.evaluate(async ({source,destination})=>
+      window.FitnessSidecarLab.compare(source,1,destination),model.lockFixture);
+    risk('after a matching snapshot, a nonparticipating old writer commits while the Web Lock is held',
+      lockHeld&&lateWrite&&lockHeldAfter&&afterLateWrite.state==='MISMATCH_NO_ACTIVATION'&&
+      await read(mp,model.lockFixture.source,1,'box','water_intake_2026-10-25')===750&&
+      await read(mp,model.lockFixture.destination,1,'data','water_intake_2026-10-25')===250);
     await mp.evaluate(()=>window.__labReleaseLock());await mc.close();
 
     // Real application code, but ONLY the reconstructed synthetic candidate on a fresh profile.

@@ -1,0 +1,208 @@
+{
+  "status": "PASS_WITH_REPRODUCED_RISKS_NOT_A_RELEASE",
+  "engine": "firefox",
+  "sourceSha256": "db1c75ab4cd532a6811afec525c5bb9126054e66255c33b8785040fb43ad4220",
+  "snapshotLabSha256": "2523c9d13cdccaa8e3653b369c60815615727689cd0ce2f80d3e4fe6d0ba9699",
+  "candidateId": "61df14df8d6cda5d432178f1",
+  "candidateManifestSha256": "76858f52d978096883b39e9e02f2319ff4358c01a1cf5d5506a92c608618f8aa",
+  "candidateMainSha256": "bb7bb7e16dec86349dc965b51cb646e6e661468dbe8e0733c79541f5e12fa1b0",
+  "candidateGuardSha256": "7514fd11ebfc0680a07e3af663c8038e2390c6a829c5def3a565c54b647f8dd2",
+  "nodeVersion": "v20.20.2",
+  "browserVersion": "142.0.1",
+  "networkIsolation": {
+    "uid": 1000,
+    "interfaces": [
+      "lo"
+    ],
+    "routes4": 0,
+    "routes6": 0,
+    "allRoutesLoopbackOnly": true
+  },
+  "checks": [
+    {
+      "name": "laboratory exposes no activation, deletion or source-write operation",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "real diary name is refused before any database open",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "arbitrary destination name is refused before any database open",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "browser can enumerate disposable databases for absent-fixture assertions",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "missing source is refused without creating source or destination",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "unexpected source schema is refused without damaging its marker or creating destination",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "a higher source version is refused without a downgrade or target creation",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "unsupported structured-clone type fails before a sidecar is created",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "a staged sidecar is copied while the old v1 connection remains open",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "source was read only and the old v1 opener still sees its original value",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "water, food text, binary bytes, list, null and integer key survive raw copying",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "restaging an occupied sidecar is refused without overwriting it",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "an injected abort follows request success and reports no commit",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "aborted transaction leaves both sidecar records and metadata empty; source is unchanged",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "retry into the still-empty aborted sidecar succeeds",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "overlapping synthetic writer is deferred until the paired readonly snapshot completes",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "two concurrent stagers cannot overwrite one another",
+      "status": "PASS",
+      "values": {
+        "successfulStagers": 1,
+        "refusedStagers": 1
+      }
+    },
+    {
+      "name": "a subsequent old-source write is detected and does not alter the staged sidecar",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "sidecar tampering is detected without changing the source",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "all audited laboratory source transactions were readonly",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "cooperating laboratory lock can be held",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "source and sidecar matched before the late old-writer experiment",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "synthetic candidate UI committed one fictional food and 250 ml",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "real synthetic-candidate Hive data stages without any source write transaction",
+      "status": "PASS",
+      "values": {
+        "records": 5
+      }
+    },
+    {
+      "name": "staged candidate values preserve the exact synthetic water and food payload",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "a later synthetic application write makes the staged snapshot mismatch",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "every loaded candidate main script matches the sealed synthetic build",
+      "status": "PASS",
+      "values": {}
+    }
+  ],
+  "risks": [
+    {
+      "name": "raw staging includes a fake private marker and is not a privacy-filtered export",
+      "status": "RISK_REPRODUCED",
+      "values": {}
+    },
+    {
+      "name": "two committed writes returning to the same value are invisible to a snapshot comparison",
+      "status": "RISK_REPRODUCED",
+      "values": {
+        "committedWrites": 2
+      }
+    },
+    {
+      "name": "after a matching snapshot, a nonparticipating old writer commits while the Web Lock is held",
+      "status": "RISK_REPRODUCED",
+      "values": {}
+    },
+    {
+      "name": "the candidate sidecar also contains the fake private marker",
+      "status": "RISK_REPRODUCED",
+      "values": {}
+    },
+    {
+      "name": "sidecar staging does not repair the existing candidate v2 rollback incompatibility",
+      "status": "RISK_REPRODUCED",
+      "values": {}
+    }
+  ],
+  "loaded": [
+    {
+      "fromServiceWorker": true,
+      "sha256": "bb7bb7e16dec86349dc965b51cb646e6e661468dbe8e0733c79541f5e12fa1b0"
+    }
+  ],
+  "limitations": [
+    "Lab-only research, NOT a release, migration, rollback mechanism, or real backup.",
+    "The v1 source and old writer are raw IndexedDB fixtures, not the exact archived +14 application.",
+    "The candidate portion uses the separately named synthetic v2 database and a disposable browser profile.",
+    "A match between sequential reads cannot fence nonparticipating writers and can miss ABA changes or future writes.",
+    "Raw staging copies private fields; it is not a privacy-filtered export and must never be used on real data.",
+    "Unknown structured-clone types are rejected; byte values and a few selected synthetic values do not cover all Hive data.",
+    "No production cutover, all record types, real diary, cloud, auth, multiple devices, real quota, power failure, Safari/iOS, or Android was tested."
+  ],
+  "blockedExternalPageRequests": 0
+}

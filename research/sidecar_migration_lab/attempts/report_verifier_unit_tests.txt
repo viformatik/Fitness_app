@@ -1,0 +1,14 @@
+test_duplicate_or_malformed_check_name_is_rejected (test_verify_results.SavedReportVerifierTests.test_duplicate_or_malformed_check_name_is_rejected) ... ok
+test_missing_or_failed_check_is_rejected (test_verify_results.SavedReportVerifierTests.test_missing_or_failed_check_is_rejected) ... ok
+test_missing_or_mislabelled_risk_is_rejected (test_verify_results.SavedReportVerifierTests.test_missing_or_mislabelled_risk_is_rejected) ... ok
+test_network_and_privilege_fail_closed (test_verify_results.SavedReportVerifierTests.test_network_and_privilege_fail_closed) ... ok
+test_non_object_is_rejected (test_verify_results.SavedReportVerifierTests.test_non_object_is_rejected) ... ok
+test_recorded_reports_match_current_sources (test_verify_results.SavedReportVerifierTests.test_recorded_reports_match_current_sources) ... ok
+test_wrong_build_and_loaded_script_are_rejected (test_verify_results.SavedReportVerifierTests.test_wrong_build_and_loaded_script_are_rejected) ... ok
+test_wrong_engine_or_overstated_release_status_is_rejected (test_verify_results.SavedReportVerifierTests.test_wrong_engine_or_overstated_release_status_is_rejected) ... ok
+test_wrong_probe_or_module_hash_is_rejected (test_verify_results.SavedReportVerifierTests.test_wrong_probe_or_module_hash_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.014s
+
+OK
