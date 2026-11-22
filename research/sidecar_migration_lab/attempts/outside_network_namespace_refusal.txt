@@ -1,0 +1,1 @@
+REFUSED BEFORE BROWSER: isolated loopback-only network namespace required
