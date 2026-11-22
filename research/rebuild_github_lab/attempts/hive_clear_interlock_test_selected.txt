@@ -1,0 +1,12 @@
+00:00 +0: loading /home/user/FITNESS_GITHUB_WORKING/candidate/test/hive_clear_interlock_test.dart
+00:00 +0: writes and a second clear are rejected until active clear finishes
+00:00 +1: clear waits for an earlier write and blocks later writes
+00:00 +2: failed clear keeps original state and permits a later retry
+00:00 +3: failed previous write finishes before clear and is not hidden
+00:00 +4: rejected add/addAll do not advance keys while clear is pending
+00:00 +5: lazy box also blocks clear/write overlap and preserves retry
+00:00 +6: lazy clear waits for an earlier pending write
+00:00 +7: clear waits for every prior write, not only the first
+00:00 +8: failed clear keeps previous integer allocation after rejected adds
+00:00 +9: real temporary VM files stay consistent on clear and retry
+00:00 +10: All tests passed!

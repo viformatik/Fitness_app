@@ -1,0 +1,162 @@
+{
+  "status": "SELECTED_SYNTHETIC_TESTS_ONLY_NOT_A_RELEASE",
+  "passed_tests": 122,
+  "runs": 25,
+  "results": [
+    {
+      "log": "preview_banner_test_retry.txt",
+      "passes": 4,
+      "sha256": "4920e0bfae9069ccd7dc40b65e833f7b36114c8be5c4f8dfc400d44e31315321",
+      "selection": "whole named file"
+    },
+    {
+      "log": "catalog_v5_selected.txt",
+      "passes": 5,
+      "sha256": "d81f4ad50e3a550bc79f55d2a64a09a9d9b9f1f05e6ad1ee72722ac643f378b3",
+      "selection": "five named tests only"
+    },
+    {
+      "log": "local_catalog_v7_test_retry.txt",
+      "passes": 6,
+      "sha256": "9fb84c122b7965cbfafb2162f7f9f939d17a8aaca2e5d02bbf6c99a223e4e9a6",
+      "selection": "whole named file"
+    },
+    {
+      "log": "regional_dairy_test_retry.txt",
+      "passes": 8,
+      "sha256": "d13c84b87159136af289a4cf81502751a9aea8ae09a60fe75a5661a6b66f977c",
+      "selection": "whole named file"
+    },
+    {
+      "log": "mobile_v8_test_retry.txt",
+      "passes": 7,
+      "sha256": "a2654f6c9b426d4fba54b64ced73aaaa8130384e1eb7b29f3b5198f26affd658",
+      "selection": "whole named file"
+    },
+    {
+      "log": "backup_snapshot_disk_safety_test_retry.txt",
+      "passes": 1,
+      "sha256": "b9e8b5c4d0a9b717aef9096e54fd9dce8dbf52f5352e28e583c30cf34ab5517a",
+      "selection": "whole named file"
+    },
+    {
+      "log": "hive_migration_test_postcatalog.txt",
+      "passes": 1,
+      "sha256": "818f175f2f420ac2129c2019c083ae2702d15063eb495e13c665487bdf84011d",
+      "selection": "whole named file"
+    },
+    {
+      "log": "hive_open_failure_test_postcatalog.txt",
+      "passes": 2,
+      "sha256": "c7b9dcda9639112bc7d12f3b63f36d6ba0a9bada0994fab54e10146e0e4e566b",
+      "selection": "whole named file"
+    },
+    {
+      "log": "local_write_queue_test_postcatalog.txt",
+      "passes": 3,
+      "sha256": "5d664216615ad897611bf702d433384b57ecdd55b7b595d30d415270d286cb97",
+      "selection": "whole named file"
+    },
+    {
+      "log": "backup_preflight_safety_test_selected.txt",
+      "passes": 7,
+      "sha256": "180c839cf432fbb84b54bd7e6dac605f3669a5e9f27586948f6258eeb6fddba3",
+      "selection": "whole named file"
+    },
+    {
+      "log": "backup_snapshot_safety_test_selected.txt",
+      "passes": 18,
+      "sha256": "dd0944955f5b88dfa94e64f54822387ed82b50e86623634e12b5c131020f77af",
+      "selection": "whole named file"
+    },
+    {
+      "log": "backup_preflight_import_ui_test_selected.txt",
+      "passes": 1,
+      "sha256": "fa7a4d2e6e52df4834228a93d28e8ad1b97fd9d3bf47ab6e315298838a333fbe",
+      "selection": "whole named file"
+    },
+    {
+      "log": "backup_snapshot_ui_safety_test_selected.txt",
+      "passes": 1,
+      "sha256": "632280c42847f66d35535e33cb3d16e7304b0ab17c406a0b1e51e79ec7557f4f",
+      "selection": "whole named file"
+    },
+    {
+      "log": "local_hive_global_queue_test_selected.txt",
+      "passes": 4,
+      "sha256": "bcb77793b3816c4098dda05c152b5df392ffbf2bafb68f1a0808397741d93706",
+      "selection": "whole named file"
+    },
+    {
+      "log": "hive_clear_interlock_test_selected.txt",
+      "passes": 10,
+      "sha256": "0ab0357d8ef7d0b15cfc51715f9684f3bc83d536c6ce9c52db6479f84df11da7",
+      "selection": "whole named file"
+    },
+    {
+      "log": "startup_clean_path_test_postcatalog.txt",
+      "passes": 1,
+      "sha256": "9326078b25b68ed17ac6c94e6951d197e34a4740a98c9581d885111dd0dfc439",
+      "selection": "whole named file"
+    },
+    {
+      "log": "startup_store_open_failure_test_postcatalog.txt",
+      "passes": 1,
+      "sha256": "6f90acf29fe74bd5d4ab99f7f1808ab2fe5e44aaf256a3460303e9b0ed7aacee",
+      "selection": "whole named file"
+    },
+    {
+      "log": "startup_corruption_profile_test_postcatalog.txt",
+      "passes": 1,
+      "sha256": "c0c64117e3146c1d72243476543b2f67f9d31c288203ed2ae1e240d8c0644df1",
+      "selection": "whole named file"
+    },
+    {
+      "log": "startup_corruption_today_test_postcatalog.txt",
+      "passes": 1,
+      "sha256": "9fdaf14579ab6de50432ac969ed638c31b42f5f4083ecab2d01b6ec960e90e95",
+      "selection": "whole named file"
+    },
+    {
+      "log": "startup_corruption_recovery_test_postcatalog.txt",
+      "passes": 1,
+      "sha256": "ace0a4f6b98a3c38fdacf29725da3e62b7e16c54eadd48cb73e25b942dedce5b",
+      "selection": "whole named file"
+    },
+    {
+      "log": "startup_recovery_export_ui_test_postcatalog.txt",
+      "passes": 1,
+      "sha256": "d5a84f353caf02922a7358ba149a70a950d7ec8c3a051d7c1d799180ed623b98",
+      "selection": "whole named file"
+    },
+    {
+      "log": "food_safety_test_selected.txt",
+      "passes": 14,
+      "sha256": "2aaee0525122728013c528547c12550cf53c4a6139a371e8b0789bd0ba6399bb",
+      "selection": "whole named file"
+    },
+    {
+      "log": "nutrition_portion_scenarios_test_selected.txt",
+      "passes": 7,
+      "sha256": "f514a860eca28b558ac93cbaa9d9648660375a3874608d1a5172ae8b706eb86a",
+      "selection": "whole named file"
+    },
+    {
+      "log": "local_hive_clear_atomic_test_selected.txt",
+      "passes": 7,
+      "sha256": "4bae225daa69944e42ee66e15c9addfde169f0cad47f31d262701f005581a074",
+      "selection": "whole named file"
+    },
+    {
+      "log": "hive_clear_lifecycle_test_selected.txt",
+      "passes": 10,
+      "sha256": "d564d18b50fad0d4f138dbd85d02551b30162fc8df932a3db79139979c4f3641",
+      "selection": "whole named file"
+    }
+  ],
+  "limitations": [
+    "Not the full test suite.",
+    "The full catalog_v5_test did not complete; the resource-intensive photo test is not covered by its selected run.",
+    "These VM/widget tests do not establish browser migration safety, real-diary safety, power-loss durability, or cloud behavior."
+  ]
+}

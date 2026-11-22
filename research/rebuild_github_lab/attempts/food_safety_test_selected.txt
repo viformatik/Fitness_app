@@ -1,0 +1,16 @@
+00:00 +0: loading /home/user/FITNESS_GITHUB_WORKING/candidate/test/food_safety_test.dart
+00:00 +0: an edit submitted during an import is rejected until an explicit retry
+00:00 +1: targeted edits preserve other rows and unchanged numeric tokens
+00:00 +2: unknown fields, nutrients, duplicate IDs and duplicate JSON keys block all writes
+00:00 +3: stale editor and stale day confirmation cannot remove newer food
+00:00 +4: failed add, edit, delete and clear do not mutate displayed or durable food
+00:00 +5: quick-food failure is partial success and retry does not duplicate diary
+00:00 +6: ambiguous high-precision records cannot be submitted to AI changes
+00:00 +7: same ID with different data is not silently treated as a retry
+00:00 +8: food editor waits for save and keeps an error visible on 320px
+00:03 +9: portion edit preserves typed value after an I/O failure
+00:04 +10: stale editor refuses to overwrite a newer day
+00:04 +11: new food remains in its editor on write failure and retries once
+00:06 +12: food editor is scrollable in short landscape with a keyboard
+00:07 +13: swipe deletion requires confirmation and failure leaves the card
+00:07 +14: All tests passed!

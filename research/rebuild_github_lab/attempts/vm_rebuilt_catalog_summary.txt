@@ -1,0 +1,6 @@
+preview_banner_test exit=0
+catalog_v5_test exit=124
+local_catalog_v7_test exit=0
+regional_dairy_test exit=0
+mobile_v8_test exit=0
+backup_snapshot_disk_safety_test exit=0

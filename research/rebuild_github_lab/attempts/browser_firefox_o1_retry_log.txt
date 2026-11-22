@@ -1,0 +1,9 @@
+{
+  "engine": "firefox",
+  "status": "PASS_WITH_ROLLBACK_RISK_NOT_A_RELEASE",
+  "passes": 17,
+  "risks": 1,
+  "output": "/home/user/FITNESS_GITHUB_WORKING/research/rebuild_github_lab/attempts/browser_firefox_o1_retry.json"
+}
+
+exit=0

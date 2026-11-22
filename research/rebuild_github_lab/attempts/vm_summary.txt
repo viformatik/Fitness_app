@@ -1,0 +1,5 @@
+hive_migration_test exit=0
+hive_open_failure_test exit=0
+preview_banner_test exit=1
+local_write_queue_test exit=0
+backup_snapshot_disk_safety_test exit=124

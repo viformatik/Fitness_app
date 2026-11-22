@@ -1,0 +1,6 @@
+backup_preflight_safety_test exit=0
+backup_snapshot_safety_test exit=0
+backup_preflight_import_ui_test exit=0
+backup_snapshot_ui_safety_test exit=0
+local_hive_global_queue_test exit=0
+hive_clear_interlock_test exit=0

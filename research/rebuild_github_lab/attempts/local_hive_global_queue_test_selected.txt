@@ -1,0 +1,6 @@
+00:00 +0: loading /home/user/FITNESS_GITHUB_WORKING/candidate/test/local_hive_global_queue_test.dart
+00:00 +0: different keys on the same Hive box do not enter concurrently
+00:00 +1: a failed write is reported and does not poison the next key
+00:00 +2: batch, conditional read and removal share the real-box queue
+00:00 +3: import gate drains queued writes and rejects stale later actions
+00:00 +4: All tests passed!

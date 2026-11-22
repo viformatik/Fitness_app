@@ -1,0 +1,10 @@
+00:00 +0: loading /home/user/FITNESS_GITHUB_WORKING/candidate/test/regional_dairy_test.dart
+00:00 +0: dairy entries distinguish estimates and do not invent micronutrients
+00:00 +1: known brand and transliteration search use recovered metadata
+00:00 +2: fat filter identifies 2.5 percent milk
+00:00 +3: fat sort puts the lowest-fat recovered milk first
+00:00 +4: Selianske barcode and provenance are specific to the recovered package
+00:00 +5: Russian Молочная Благодать is not presented as PMR Благода
+00:00 +6: quick search shows recovered local milk before generic staples
+00:00 +7: mobile food dialog offers confirmed ТХК and generic milk, not unsupported producers
+00:02 +8: All tests passed!

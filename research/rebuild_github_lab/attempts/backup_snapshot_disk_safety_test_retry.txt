@@ -1,0 +1,3 @@
+00:00 +0: loading /home/user/FITNESS_GITHUB_WORKING/candidate/test/backup_snapshot_disk_safety_test.dart
+00:00 +0: a synthetic disk-backed Hive snapshot follows the committed write
+00:00 +1: All tests passed!

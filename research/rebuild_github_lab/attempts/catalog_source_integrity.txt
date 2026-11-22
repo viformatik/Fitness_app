@@ -1,0 +1,12 @@
+test_dairy_estimates_sources_and_barcodes (__main__.CatalogIntegrity.test_dairy_estimates_sources_and_barcodes) ... ok
+test_declared_outputs_stay_in_catalog_directories (__main__.CatalogIntegrity.test_declared_outputs_stay_in_catalog_directories) ... ok
+test_every_thk_value_is_an_exact_transcription_of_the_input_table (__main__.CatalogIntegrity.test_every_thk_value_is_an_exact_transcription_of_the_input_table) ... ok
+test_generated_datasets_are_deterministic (__main__.CatalogIntegrity.test_generated_datasets_are_deterministic) ... ok
+test_historic_pmr_not_a_cartesian_product (__main__.CatalogIntegrity.test_historic_pmr_not_a_cartesian_product) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.302s
+
+OK
+Wrote 99 reviewed PMR listings; no generated producer/template combinations.
+Wrote 29 reviewed/labelled regional milk entries.

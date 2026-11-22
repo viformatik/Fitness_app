@@ -1,0 +1,4 @@
+food_safety_test exit=0
+nutrition_portion_scenarios_test exit=0
+local_hive_clear_atomic_test exit=0
+hive_clear_lifecycle_test exit=0

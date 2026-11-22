@@ -1,0 +1,10 @@
+test_cli_refuses_an_arbitrary_directory (__main__.SyntheticStampTests.test_cli_refuses_an_arbitrary_directory) ... ok
+test_identical_inputs_have_identical_seal (__main__.SyntheticStampTests.test_identical_inputs_have_identical_seal) ... ok
+test_missing_asset_does_not_write_manifest (__main__.SyntheticStampTests.test_missing_asset_does_not_write_manifest) ... ok
+test_seal_matches_every_asset_and_refuses_second_run (__main__.SyntheticStampTests.test_seal_matches_every_asset_and_refuses_second_run) ... ok
+test_symlink_is_rejected (__main__.SyntheticStampTests.test_symlink_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.074s
+
+OK

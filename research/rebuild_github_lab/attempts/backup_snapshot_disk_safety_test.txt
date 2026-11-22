@@ -1,0 +1,7 @@
+00:00 +0: loading /home/user/FITNESS_GITHUB_WORKING/candidate/test/backup_snapshot_disk_safety_test.dart
+00:00 +0 -1: loading /home/user/FITNESS_GITHUB_WORKING/candidate/test/backup_snapshot_disk_safety_test.dart [E]
+  Failed to load "/home/user/FITNESS_GITHUB_WORKING/candidate/test/backup_snapshot_disk_safety_test.dart": Shell subprocess crashed with SIGTERM (-15).
+00:00 +0 -1: Some tests failed.
+
+Failing tests:
+  /home/user/FITNESS_GITHUB_WORKING/candidate/test/backup_snapshot_disk_safety_test.dart: loading /home/user/FITNESS_GITHUB_WORKING/candidate/test/backup_snapshot_disk_safety_test.dart
