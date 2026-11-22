@@ -1,0 +1,4 @@
+node --check: PASS
+bash -n: PASS
+outside namespace exit=2: REFUSED BEFORE BROWSER: isolated loopback-only network namespace required
+unsupported probe exit=2: Unsupported synthetic probe

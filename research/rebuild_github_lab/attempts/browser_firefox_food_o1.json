@@ -1,0 +1,215 @@
+{
+  "status": "PASS_WITH_ROLLBACK_RISK_NOT_A_RELEASE",
+  "engine": "firefox",
+  "sourceSha256": "971ef86e136a8c07b59bdfa81bc79bbf7145b9458dc96a9c50a6a90dcf393ed9",
+  "candidateId": "61df14df8d6cda5d432178f1",
+  "candidateManifestSha256": "76858f52d978096883b39e9e02f2319ff4358c01a1cf5d5506a92c608618f8aa",
+  "candidateMainSha256": "bb7bb7e16dec86349dc965b51cb646e6e661468dbe8e0733c79541f5e12fa1b0",
+  "candidateGuardSha256": "7514fd11ebfc0680a07e3af663c8038e2390c6a829c5def3a565c54b647f8dd2",
+  "candidateWorkerSha256": "7020134b936364713bc13f8e54a47c434d2ef31b10953712d3c925cfba2c3bd5",
+  "candidateFiles": 42,
+  "nodeVersion": "v20.20.2",
+  "browserVersion": "142.0.1",
+  "networkIsolation": {
+    "uid": 1000,
+    "interfaces": [
+      "lo"
+    ],
+    "routes4": 0,
+    "routes6": 0,
+    "allRoutesLoopbackOnly": true
+  },
+  "checks": [
+    {
+      "name": "without Web Locks neither Flutter nor the synthetic diary is opened",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "no unsafe-continue control is offered",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "an unexpected v1 schema is not upgraded or changed",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "candidate waits while the raw v1 fixture keeps its connection",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "candidate reads the raw v1 fixture last committed value after the fence",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "source profile contains its synthetic private marker before export",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "candidate adds and commits synthetic water",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "a second participating page cannot start Flutter while the lock is held",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "after lock transfer the candidate reopens the committed value",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "abort after request success keeps committed water and shows a warning",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "a deliberate retry commits once after the injected abort",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "source has no synthetic food before the UI action",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "UI commits one synthetic food with exact portion and per-100g macros",
+      "status": "PASS",
+      "values": {
+        "grams": 150,
+        "kcalPer100g": 120
+      }
+    },
+    {
+      "name": "UI shows the fictional 150 g food and 180 kcal",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "restore profile starts without water or food",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "destination contains a different synthetic private marker before import",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "UI JSON export contains synthetic committed water",
+      "status": "PASS",
+      "values": {
+        "syntheticWater": 1000,
+        "bytes": 820
+      }
+    },
+    {
+      "name": "UI JSON export preserves the exact synthetic food payload",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "source marker is still stored but excluded from the exported JSON",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "the loopback HTTP server is actually stopped",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "candidate reopens offline and retains synthetic water",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "candidate reopens offline with the exact synthetic food payload",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "offline candidate main script comes from the service worker",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "offline UI import restores the exact water into a separate profile",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "offline UI import restores the exact synthetic food payload",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "offline import preserves the destination-only synthetic private marker",
+      "status": "PASS",
+      "values": {}
+    },
+    {
+      "name": "every executed candidate main script matches the sealed build",
+      "status": "PASS",
+      "values": {}
+    }
+  ],
+  "risks": [
+    {
+      "name": "an ordinary v1 opener cannot open the synthetic v2 database offline",
+      "status": "RISK_REPRODUCED",
+      "values": {
+        "error": "VersionError"
+      }
+    }
+  ],
+  "loaded": [
+    {
+      "page": "candidate-initial",
+      "fromServiceWorker": true,
+      "sha256": "bb7bb7e16dec86349dc965b51cb646e6e661468dbe8e0733c79541f5e12fa1b0"
+    },
+    {
+      "page": "candidate-second",
+      "fromServiceWorker": true,
+      "sha256": "bb7bb7e16dec86349dc965b51cb646e6e661468dbe8e0733c79541f5e12fa1b0"
+    },
+    {
+      "page": "restore-warm",
+      "fromServiceWorker": true,
+      "sha256": "bb7bb7e16dec86349dc965b51cb646e6e661468dbe8e0733c79541f5e12fa1b0"
+    },
+    {
+      "page": "candidate-second",
+      "fromServiceWorker": true,
+      "sha256": "bb7bb7e16dec86349dc965b51cb646e6e661468dbe8e0733c79541f5e12fa1b0"
+    },
+    {
+      "page": "candidate-second",
+      "fromServiceWorker": true,
+      "sha256": "bb7bb7e16dec86349dc965b51cb646e6e661468dbe8e0733c79541f5e12fa1b0"
+    },
+    {
+      "page": "restore-offline",
+      "fromServiceWorker": true,
+      "sha256": "bb7bb7e16dec86349dc965b51cb646e6e661468dbe8e0733c79541f5e12fa1b0"
+    }
+  ],
+  "limitations": [
+    "This is a new reconstructed synthetic candidate, not the previously lost candidate or a production build.",
+    "The old v1 writer is a raw IndexedDB fixture, not the exact archived +14 Flutter application.",
+    "Only disposable profiles, a synthetic database, synthetic water, one synthetic food and two fake private markers are tested; no real diary or account is accessed.",
+    "The injected abort is not real quota exhaustion, process termination, power loss or hardware failure.",
+    "A single synthetic JSON restore does not prove every type of record, privacy field or real backup recovery.",
+    "An ordinary old v1 rollback is incompatible. Safari/iOS, Android, cloud sync and multiple devices are not covered."
+  ],
+  "blockedExternalPageRequests": 0
+}
