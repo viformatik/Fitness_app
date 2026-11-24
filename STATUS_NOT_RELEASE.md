@@ -9,9 +9,12 @@
 - Пере-применены четыре исправления из утраченных коммитов (импорт/C2,
   валидация облачных строк, превью и подтверждения импорта, доставка бэкапа).
 - 4 новых тест-файла (20 тестов после усиления регресса §4.2).
-- Коммиты `b8cbabb` и `f7ebadc` с `[skip ci]` запушены в
+- Коммиты `b8cbabb`, `f7ebadc` и `36c3a2e` с `[skip ci]` запушены в
   `work/github-reconstruction-synthetic`; `git ls-remote` подтверждает
-  `f7ebadc`, `main` остаётся на `b32a152`.
+  `36c3a2e`, `main` остаётся на `b32a152`.
+- Артефакты `NOT_RELEASE` с SHA-256-сидкарами собраны и видны на Google Drive
+  в корне (`00_FITNESS_36c3a2e_*`).
+- Vercel/Supabase проверены только в read-only режиме (см. ниже).
 - Браузерный зонд доставки: Chromium 141 и Firefox 142, по 3/3 PASS.
 
 ## Что проверено
@@ -27,10 +30,11 @@
 
 ## Что НЕ проверено
 
-- Выгрузка артефактов на Google Drive (коннектор недоступен).
 - Device Flow и отзыв токена: push использовал сохранённые учётные данные
   Git Credential Manager; агент не получал и не хранил токен.
-- Реальные дневники, IndexedDB `fitness_v2`, аккаунты, Auth, Supabase, RLS.
+- Реальные дневники, IndexedDB `fitness_v2`, аккаунты, RLS и схема Supabase:
+  доступ к панели получен, но **никакие проекты/таблицы не изменились**.
+- Vercel: только просмотр страниц проектов; деплои не запускались.
 - Настоящий системный Web Share ОС и загрузка в пользовательскую файловую
   систему вне браузерного зонда.
 - Изолированный harness `run_isolated.sh` (нет `bash`, `ip`, `unshare`).
@@ -44,6 +48,16 @@
   не исправлена и не выдаётся за решённую.
 - Web Locks не останавливают старые вкладки и посторонних писателей.
 - Обычный откат с v2 на v1 несовместим.
+
+## Read-only состояние внешних сервисов (2026-11-24)
+
+- **Vercel** (`bityi-byte`): проект `fitness-smart`, production **Ready**,
+  домен `fitness-smart-navy.vercel.app`, деплой от Nov 8 через `vercel deploy`
+  (Git не подключён); previews 6/7 Ready, Error Rate 0%.
+- **Supabase** (`vhodcinname@gmail.com`, через GitHub OAuth): организация
+  `Fitness_app` (FREE), проекты `Fitness_app` (eu-west-1, NANO) и
+  `Fitness_smart_test` (eu-central-1, **paused**). Панель показывает баннер
+  технического инцидента. Ничего не включалось и не мигрировалось.
 
 Подробности: `HANDOFF_RESULT_RU.md`,
 `candidate/checks/attempts/REBUILT_FIXES_20261124.json`,
