@@ -1,2 +1,4 @@
 # Flutter-generated dependency paths vary by machine; never publish them.
 .flutter-plugins-dependencies
+.vercel
+.env*

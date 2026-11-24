@@ -34,6 +34,16 @@ Auth, облако, Vercel и Supabase не использовались.
   документация). Push в `work/github-reconstruction-synthetic` выполнен;
   `git ls-remote` показывает `f7ebadc`, `main` остаётся на `b32a152`.
 
+## Публикация сайта
+
+По прямому указанию пользователя развёрнут **новый** Vercel-проект
+`fitness-smart-synthetic-not-release`:
+`https://fitness-smart-synthetic-not-release.vercel.app`.
+Production-deploy `dpl_ELutaWk5LRv8ngkTg5RskQXbni9w`, статус READY.
+Сайт проверен в Chromium: интерфейс загружается, кнопка «Вода +250 мл»
+работает, три нажатия дают 750 мл (гонка исправлена). Существующий проект
+`fitness-smart` и все Supabase-проекты не изменялись.
+
 ## Что осталось (осознанно не сделано)
 
 1. **Device Flow не использовался**: push прошёл через уже сохранённые

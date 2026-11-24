@@ -38,7 +38,10 @@
   Git Credential Manager; агент не получал и не хранил токен.
 - Реальные дневники, IndexedDB `fitness_v2`, аккаунты, RLS и схема Supabase:
   доступ к панели получен, но **никакие проекты/таблицы не изменились**.
-- Vercel: только просмотр страниц проектов; деплои не запускались.
+- Vercel: создан **новый** проект `fitness-smart-synthetic-not-release`;
+  production-сайт `https://fitness-smart-synthetic-not-release.vercel.app`
+  развёрнут из этого кандидата и проверен в Chromium (три нажатия +250 мл
+  дают 750 мл). Существующий проект `fitness-smart` не перезаписывался.
 - Настоящий системный Web Share ОС и загрузка в пользовательскую файловую
   систему вне браузерного зонда.
 - Изолированный harness `run_isolated.sh` (нет `bash`, `ip`, `unshare`).
