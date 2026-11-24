@@ -4304,7 +4304,18 @@ class AppDataProvider extends ChangeNotifier {
       _successFeedback();
     }
     notifyListeners();
-    await _persistDiary(() => _storage.setWaterIntake(date, value));
+    // Relative, queued read-modify-write: a stale absolute value from another
+    // view cannot erase this increment. Reconcile the optimistic UI afterwards.
+    await _persistDiary(() => _storage.addWaterIntake(date, ml));
+    // Other views may have queued increments behind ours; drain the shared
+    // queue before reconciling so the UI never keeps a stale absolute value.
+    await _storage.pendingMutations;
+    final persisted = await _storage.getWaterIntake(date);
+    if (_todayWaterIntake != persisted) {
+      _todayWaterIntake = persisted;
+      _patchLog(date, waterDelta: persisted - value, hasWaterRecord: true);
+      notifyListeners();
+    }
   }
 
   Future<void> setWaterIntake(int ml) async {
@@ -4328,7 +4339,14 @@ class AppDataProvider extends ChangeNotifier {
     _patchLog(date, stepsDelta: steps, hasStepsRecord: true);
     _lightFeedback();
     notifyListeners();
-    await _persistDiary(() => _storage.setSteps(date, total));
+    await _persistDiary(() => _storage.addSteps(date, steps));
+    await _storage.pendingMutations;
+    final persisted = await _storage.getSteps(date);
+    if (_todaySteps != persisted) {
+      _todaySteps = persisted;
+      _patchLog(date, stepsDelta: persisted - total, hasStepsRecord: true);
+      notifyListeners();
+    }
   }
 
   Future<void> setSteps(int steps) async {
