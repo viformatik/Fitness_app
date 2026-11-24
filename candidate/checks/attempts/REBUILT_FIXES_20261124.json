@@ -1,6 +1,6 @@
 {
   "status": "NOT_RELEASE",
-  "branch": "work/github-reconstruction-synthetic (local, unpushed)",
+  "branch": "work/github-reconstruction-synthetic (local commit b8cbabb, unpushed)",
   "baseline": "4e21f0c50545fedba4d983307de837693dc87b5d",
   "environment": "Flutter 3.47.8 / Dart 3.13.7, Windows, synthetic data only",
   "fixes": [
@@ -12,7 +12,7 @@
   "checks": {
     "dart_analyze_targeted": "clean",
     "dart_analyze_web_file": "clean",
-    "new_tests_passed": 19,
+    "new_tests_passed": 20,
     "affected_regressions": "all passed",
     "full_suite_excluding_postgrest": {
       "passed": 672,
@@ -20,14 +20,28 @@
       "failures_reproduced_on_baseline": true,
       "note": "missing fixture checks/recovery_prototype/synthetic_import_example.json; section_navigation_test harness lookup"
     },
-    "web_build_o1": "success"
+    "web_build_o1": "success",
+    "shell_restamped": "b7dcd4f4ad3845ce0068125d",
+    "init_after_import_regression": {
+      "scenario": "import -> fresh provider -> init() -> diary reads",
+      "stores": ["in-memory", "Hive temporary directory"],
+      "runs": "6/6 passed (3 repetitions x 2 scenarios)",
+      "timeout_seconds": 20,
+      "asserts_actual_reads": true
+    },
+    "browser_delivery_probe": {
+      "harness": "local delivery_probe.cjs, NOT run_isolated.sh (no bash/ip/unshare on Windows)",
+      "chromium": "3/3 PASS, browser 141.0.7390.37, report attempts/chromium_delivery_fallback_20261124.json",
+      "firefox": "3/3 PASS, browser 142.0.1, report attempts/firefox_delivery_fallback_20261124.json",
+      "verified": "no Web Share -> real JSON download with synthetic water 250; working share used first, no second silent download"
+    }
   },
   "not_verified": [
-    "real browser download to disk",
-    "real OS Web Share",
+    "real OS Web Share and user filesystem save",
     "live Supabase / Auth / RLS",
     "real IndexedDB, Safari/iOS, Android",
-    "historical init-after-import hang (not reproducible; bounded regression added)"
+    "isolated run_isolated.sh browser harness",
+    "postgrest_integration_test (needs real PostgreSQL)"
   ],
-  "publication": "not performed: no GitHub token, no deploy, no push, no migration"
+  "publication": "local commit only: no GitHub push (no token), no Google Drive connector, no deploy, no migration"
 }

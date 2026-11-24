@@ -1,0 +1,50 @@
+{
+  "status": "PASS_NOT_A_RELEASE",
+  "scenario": "delivery fallback (no navigator.share / canShare false)",
+  "engine": "chromium",
+  "isolation": "NOT isolated: ordinary local profile, no network namespace",
+  "probeSha256": "055e60af940a91644942206f646dfc0afebc7ede8a793dcb1e5460e96f87e9a7",
+  "buildFiles": 45,
+  "browserVersion": "141.0.7390.37",
+  "checks": [
+    {
+      "name": "no Web Share still produces a browser download",
+      "status": "PASS",
+      "values": {
+        "file": "fitness_all_2026-11-24.json"
+      }
+    },
+    {
+      "name": "downloaded envelope is a fitness_tracker JSON with synthetic water",
+      "status": "PASS",
+      "values": {
+        "app": "fitness_tracker",
+        "waterKey": "water_intake_2026-11-24",
+        "water": 250,
+        "bytes": 141
+      }
+    },
+    {
+      "name": "working share is used first and does not trigger a second download",
+      "status": "PASS",
+      "values": {
+        "calls": [
+          {
+            "files": [
+              "fitness_all_2026-11-24.json"
+            ]
+          }
+        ],
+        "downloaded": false
+      }
+    }
+  ],
+  "risks": [],
+  "errors": [],
+  "limitations": [
+    "Local Playwright probe, not the isolated run_isolated.sh harness (bash/ip/unshare unavailable here).",
+    "Synthetic water in a disposable browser profile only; no real diary, account or cloud.",
+    "A stubbed navigator.share/canShare is not proof of an operating-system share sheet.",
+    "Firefox and Chromium only; Safari/iOS and Android are not covered."
+  ]
+}
