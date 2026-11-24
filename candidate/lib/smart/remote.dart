@@ -138,10 +138,10 @@ class SmartRemote extends ChangeNotifier {
   bool? sleepCloudAvailable;
   String status = 'Облако не настроено';
   final List<SyncConflict> conflicts = [];
-  // Synthetic candidate only: even build-time environment values cannot turn
-  // cloud access on. This is not a production configuration.
-  static const url = '';
-  static const publicKey = '';
+  // Public, non-secret Supabase values supplied at build time via
+  // --dart-define-from-file=config.public.json (gitignored).
+  static const url = String.fromEnvironment('SUPABASE_URL');
+  static const publicKey = String.fromEnvironment('SUPABASE_PUBLISHABLE_KEY');
 
   Future<void> initialize() async {
     if (url.isEmpty || publicKey.isEmpty) return;
