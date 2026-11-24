@@ -10,7 +10,6 @@ import 'package:flutter/physics.dart';
 import 'package:flutter/services.dart' show Clipboard, ClipboardData;
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
-import 'package:share_plus/share_plus.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:speech_to_text/speech_recognition_error.dart';
 import '../legacy.dart';
@@ -19,6 +18,7 @@ import 'csv_reader.dart';
 import 'remote.dart';
 import 'ai_drafts.dart';
 import 'ai_preferences.dart';
+import 'backup_delivery.dart';
 import 'local_store.dart';
 import 'ai_actions.dart';
 import 'supplements.dart';
@@ -1656,21 +1656,26 @@ class BackupPanel extends StatelessWidget {
       if (!await confirmUnverifiedBackup(context, review)) return;
       if (!context.mounted) return;
       final box = context.findRenderObject() as RenderBox?;
-      await SharePlus.instance.share(
-        ShareParams(
-          files: [
-            XFile.fromData(
-              Uint8List.fromList(utf8.encode(text)),
-              mimeType: csv ? 'text/csv' : 'application/json',
-            ),
-          ],
-          fileNameOverrides: [
+      final delivered = await deliverBackupFile(
+        Uint8List.fromList(utf8.encode(text)),
+        fileName:
             'fitness_all_${dayKey(DateTime.now())}.${csv ? 'csv' : 'json'}',
-          ],
-          sharePositionOrigin: box == null
-              ? null
-              : box.localToGlobal(Offset.zero) & box.size,
-        ),
+        mimeType: csv ? 'text/csv' : 'application/json',
+        sharePositionOrigin: box == null
+            ? null
+            : box.localToGlobal(Offset.zero) & box.size,
+      );
+      if (!context.mounted) return;
+      await notice(
+        context,
+        switch (delivered) {
+          BackupDelivery.shared => 'Файл передан в систему обмена. '
+              'Проверьте, что он сохранён в надёжном месте.',
+          BackupDelivery.downloaded => 'Файл сохранён как загрузка браузера. '
+              'Проверьте папку загрузок.',
+          BackupDelivery.failed => 'Не удалось передать файл. '
+              'Скопируйте копию вручную из окна экспорта.',
+        },
       );
     } catch (e) {
       if (context.mounted) notice(context, e);
@@ -1707,15 +1712,40 @@ class BackupPanel extends StatelessWidget {
       final raw = csv
           ? jsonEncode({'app': 'fitness_tracker', 'data': importCsv(text)})
           : text;
+      final incoming = parseBackupDocuments(text, csv: csv);
+      if (incoming == null) {
+        if (context.mounted) {
+          await notice(
+            context,
+            'Копия не прошла проверку импортёра. Дневник не изменён.',
+          );
+        }
+        return;
+      }
       if (!context.mounted) return;
+      final current = provider.storage.local.snapshot();
+      final preview = previewImportDocuments(incoming, current);
+      final guard = ImportReviewGuard(
+        documents: documentsFingerprint(incoming),
+        diary: documentsFingerprint(current),
+        account: currentImportAccount(provider),
+      );
       final yes = await showDialog<bool>(
         context: context,
         builder: (ctx) => AlertDialog(
           title: const Text('Заменить всю локальную историю?'),
-          content: const Text(
-            'Сделайте экспорт перед импортом. После синхронизации изменения попадут и в облако. '
-            'Локальные черновики и избранное ИИ, а также согласие не входят в файл '
-            'и останутся на этом устройстве.',
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(preview.summary),
+              const SizedBox(height: 10),
+              const Text(
+                'Сделайте экспорт перед импортом. После синхронизации изменения попадут и в облако. '
+                'Локальные черновики и избранное ИИ, а также согласие не входят в файл '
+                'и останутся на этом устройстве.',
+              ),
+            ],
           ),
           actions: [
             TextButton(
@@ -1730,7 +1760,20 @@ class BackupPanel extends StatelessWidget {
         ),
       );
       if (yes != true) return;
-      await provider.storage.pendingMutations;
+      if (!context.mounted) return;
+      if (!await confirmImportRemovals(context, preview)) return;
+      if (!context.mounted) return;
+      final stale = guard.staleReason(
+        documents: documentsFingerprint(
+          parseBackupDocuments(text, csv: csv) ?? const {},
+        ),
+        diary: await currentDiaryFingerprint(provider),
+        account: currentImportAccount(provider),
+      );
+      if (stale != null) {
+        if (context.mounted) await notice(context, '$stale Импорт отменён.');
+        return;
+      }
       final error = await provider.importDataJson(raw);
       if (context.mounted) notice(context, error ?? 'История импортирована');
     } catch (e) {

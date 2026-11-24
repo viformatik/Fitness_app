@@ -45,6 +45,8 @@ class SmartRemote extends ChangeNotifier {
       'Новые локальные изменения пока не синхронизированы. Повторите синхронизацию.';
   static const _sleepLocalMessage =
       'Сон остаётся на устройстве: серверная поддержка не настроена.';
+  /// Largest integer that survives a JSON round trip without losing precision.
+  static const int maxCloudRevision = 9007199254740991;
   void bindLocal(
     LocalPreferences local,
     void Function(String, Object?) validate,
@@ -201,6 +203,33 @@ class SmartRemote extends ChangeNotifier {
         .any((key) => !equal(baseline[key], current[key]));
   }
 
+  /// Reject malformed cloud rows before a single local document is touched.
+  /// A row without `payload` is not a tombstone: only an explicit null with a
+  /// valid positive revision is. Shared [seen] also catches cross-table dupes.
+  void _validateCloudRow(
+    Map<String, dynamic> row, {
+    required bool sleepTable,
+    required Set<String> seen,
+  }) {
+    final key = row['key'];
+    if (key is! String || key.isEmpty) {
+      throw StateError('Некорректный ключ облачного документа');
+    }
+    if (key.startsWith(sleepDayPrefix) != sleepTable) {
+      throw StateError('Ключ облачного документа не соответствует таблице');
+    }
+    if (!seen.add(key)) {
+      throw StateError('Дублирующийся ключ облачного документа');
+    }
+    if (!row.containsKey('payload')) {
+      throw StateError('В облачной строке отсутствует payload');
+    }
+    final revision = row['revision'];
+    if (revision is! int || revision <= 0 || revision > maxCloudRevision) {
+      throw StateError('Некорректная ревизия облачного документа');
+    }
+  }
+
   Future<void> sync(
     LocalPreferences store, {
     required void Function(String, Object?) validate,
@@ -274,6 +303,15 @@ class SmartRemote extends ChangeNotifier {
       }
       if (c.auth.currentUser?.id != uid)
         throw StateError('Аккаунт изменился во время синхронизации');
+      // Validate the complete result set first. Otherwise a malformed row at
+      // the end of a page could already have erased local water or sleep data.
+      final seenCloudKeys = <String>{};
+      for (final row in rows) {
+        _validateCloudRow(row, sleepTable: false, seen: seenCloudKeys);
+      }
+      for (final row in sleepRows) {
+        _validateCloudRow(row, sleepTable: true, seen: seenCloudKeys);
+      }
       sleepCloudAvailable = sleepAvailable;
       final remote = <String, Map<String, dynamic>>{};
       for (final row in rows) {

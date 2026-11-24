@@ -1344,6 +1344,23 @@ int _backupUtf8Bytes(String text) {
 /// Check the bytes that would be shared/copied, including a CSV round-trip
 /// against the captured documents when available. Never include record values
 /// or caught parser errors in the result or messages.
+/// Parse a backup with exactly the importer's rules without touching storage.
+/// Returns null for an unrecognized envelope or an unknown document key;
+/// malformed known documents throw, just as they do during a real import.
+Map<String, dynamic>? parseBackupDocuments(String text, {bool csv = false}) {
+  final dynamic decoded = csv
+      ? {'app': 'fitness_tracker', 'data': importCsv(text)}
+      : jsonDecode(text);
+  if (decoded is! Map<String, dynamic> ||
+      decoded['app'] != 'fitness_tracker' ||
+      decoded['data'] is! Map) {
+    return null;
+  }
+  final data = decoded['data'] as Map;
+  if (!validateBackupDocuments(data)) return null;
+  return {for (final entry in data.entries) entry.key.toString(): entry.value};
+}
+
 BackupReview reviewBackupFile(
   String text, {
   bool csv = false,
@@ -1354,18 +1371,8 @@ BackupReview reviewBackupFile(
     return BackupReview(BackupReviewIssue.tooLarge, bytes);
   }
   try {
-    final dynamic decoded = csv
-        ? {'app': 'fitness_tracker', 'data': importCsv(text)}
-        : jsonDecode(text);
-    if (decoded is! Map<String, dynamic> ||
-        decoded['app'] != 'fitness_tracker' ||
-        decoded['data'] is! Map) {
-      return BackupReview(BackupReviewIssue.invalid, bytes);
-    }
-    final data = decoded['data'] as Map;
-    if (!validateBackupDocuments(data)) {
-      return BackupReview(BackupReviewIssue.invalid, bytes);
-    }
+    final data = parseBackupDocuments(text, csv: csv);
+    if (data == null) return BackupReview(BackupReviewIssue.invalid, bytes);
     if (expectedDocuments != null &&
         jsonEncode(_orderedJson(data)) !=
             jsonEncode(_orderedJson(expectedDocuments))) {
@@ -1375,6 +1382,122 @@ BackupReview reviewBackupFile(
   } catch (_) {
     return BackupReview(BackupReviewIssue.invalid, bytes);
   }
+}
+
+/// A deterministic fingerprint for comparing reviewed content later. Values
+/// are never shown to the user through this class.
+String documentsFingerprint(Map<dynamic, dynamic> documents) =>
+    jsonEncode(_orderedJson(documents));
+
+/// Count-only preview of what an import would change. It deliberately carries
+/// neither document keys nor values.
+class ImportPreview {
+  final int added, changed, deleted, unchanged;
+  const ImportPreview({
+    required this.added,
+    required this.changed,
+    required this.deleted,
+    required this.unchanged,
+  });
+
+  bool get isEmpty => added == 0 && changed == 0 && deleted == 0;
+
+  /// Local records disappear only when the incoming file omits them.
+  bool get removesDocuments => deleted > 0;
+
+  String get summary =>
+      'Добавлено документов: $added. Изменено: $changed. '
+      'Удалено: $deleted. Без изменений: $unchanged.';
+}
+
+ImportPreview previewImportDocuments(
+  Map<dynamic, dynamic> incoming,
+  Map<dynamic, dynamic> current,
+) {
+  var added = 0, changed = 0, deleted = 0, unchanged = 0;
+  for (final entry in incoming.entries) {
+    if (!current.containsKey(entry.key)) {
+      added++;
+    } else if (jsonEncode(_orderedJson(current[entry.key])) ==
+        jsonEncode(_orderedJson(entry.value))) {
+      unchanged++;
+    } else {
+      changed++;
+    }
+  }
+  for (final key in current.keys) {
+    if (!incoming.containsKey(key)) deleted++;
+  }
+  return ImportPreview(
+    added: added,
+    changed: changed,
+    deleted: deleted,
+    unchanged: unchanged,
+  );
+}
+
+/// Detects a changed file, diary or account between review and confirmation.
+/// Only opaque fingerprints are stored, never the documents themselves.
+class ImportReviewGuard {
+  final String documents, diary, account;
+  const ImportReviewGuard({
+    required this.documents,
+    required this.diary,
+    required this.account,
+  });
+
+  String? staleReason({
+    required String documents,
+    required String diary,
+    required String account,
+  }) {
+    if (this.documents != documents) return 'Файл копии изменился после проверки.';
+    if (this.diary != diary) return 'Дневник изменился после проверки.';
+    if (this.account != account) return 'Аккаунт изменился после проверки.';
+    return null;
+  }
+}
+
+/// Extra, explicit consent for an import that would remove local documents.
+Future<bool> confirmImportRemovals(
+  BuildContext context,
+  ImportPreview preview,
+) async {
+  if (!context.mounted || !preview.removesDocuments) return true;
+  return await showDialog<bool>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: const Text('Удалить локальные записи?'),
+          content: Text(
+            'Копия не содержит ${preview.deleted} локальных документов. '
+            'Они будут удалены вместе с заменой остальных записей.',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, false),
+              child: const Text('Отмена'),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.pop(ctx, true),
+              child: const Text('Удалить и импортировать'),
+            ),
+          ],
+        ),
+      ) ??
+      false;
+}
+
+/// Current local diary as an opaque snapshot for a review guard.
+Future<String> currentDiaryFingerprint(AppDataProvider provider) async {
+  await provider.storage.pendingMutations;
+  return documentsFingerprint(provider.storage.local.snapshot());
+}
+
+/// Current sign-in identity plus the local account binding.
+String currentImportAccount(AppDataProvider provider) {
+  final remote = SmartRemote.instance;
+  return '${remote.client?.auth.currentUser?.id ?? ''}'
+      '|${provider.storage.local.getString('_bound_user') ?? ''}';
 }
 
 class StorageService {
@@ -2802,10 +2925,11 @@ class StorageService {
 
   /// Decode a checkpoint without interpreting or normalizing the documents.
   /// An unrepresentable existing value aborts an import before any deletion.
-  static Map<String, Object> _decodeImportCheckpoint(Object? raw) {
-    if (raw is! String ||
-        !(raw.startsWith(LocalPreferences.importPendingPrefix) ||
-            raw.startsWith(LocalPreferences.importCommittedPrefix))) {
+  static Map<String, Object> _decodeImportCheckpointBody(
+    Object? raw,
+    List<String> allowedPrefixes,
+  ) {
+    if (raw is! String || !allowedPrefixes.any(raw.startsWith)) {
       throw const ImportRecoveryRequired();
     }
     try {
@@ -2839,21 +2963,41 @@ class StorageService {
     }
   }
 
+  /// The current import journal (P1/C1).
+  static Map<String, Object> _decodeImportCheckpoint(Object? raw) =>
+      _decodeImportCheckpointBody(raw, [
+        LocalPreferences.importPendingPrefix,
+        LocalPreferences.importCommittedPrefix,
+      ]);
+
+  /// The older C2 copy retained across a successful repeated import.
+  static Map<String, Object> _decodeImportPrevCheckpoint(Object? raw) =>
+      _decodeImportCheckpointBody(
+        raw,
+        [LocalPreferences.importPrevCommittedPrefix],
+      );
+
   /// A user-triggered copy of the original pre-import snapshot, if readable.
   /// AI state and cloud credentials are not part of this recovery copy.
   String? importBackupJson() {
     final prefs = _prefs;
-    if (prefs == null || prefs.get(LocalPreferences.importJournalKey) == null) {
+    if (prefs == null ||
+        (prefs.get(LocalPreferences.importJournalKey) == null &&
+            prefs.get(LocalPreferences.importPrevJournalKey) == null)) {
       return null;
     }
     try {
+      final raw = prefs.get(LocalPreferences.importJournalKey);
+      final data = raw != null
+          ? _decodeImportCheckpoint(raw)
+          : _decodeImportPrevCheckpoint(
+              prefs.get(LocalPreferences.importPrevJournalKey),
+            );
       return const JsonEncoder.withIndent('  ').convert({
         'app': 'fitness_tracker',
         'version': 2,
         'exportedAt': DateTime.now().toIso8601String(),
-        'data': _decodeImportCheckpoint(
-          prefs.get(LocalPreferences.importJournalKey),
-        ),
+        'data': data,
       });
     } catch (_) {
       return null;
@@ -2872,6 +3016,17 @@ class StorageService {
       );
       await prefs.flush();
     }
+    // Read the older copy before restoring: after this import is rolled back
+    // it becomes the single retained recovery copy again.
+    final prevRaw = prefs.get(LocalPreferences.importPrevJournalKey);
+    Map<String, Object>? previous;
+    if (prevRaw != null) {
+      try {
+        previous = _decodeImportPrevCheckpoint(prevRaw);
+      } catch (_) {
+        previous = null;
+      }
+    }
     // Keep the checkpoint throughout restoration. A second interruption will
     // retry the same complete pre-import snapshot on the next startup.
     await prefs.clear(includeLocalAi: false);
@@ -2880,6 +3035,16 @@ class StorageService {
     }
     await prefs.flush();
     await prefs.remove(LocalPreferences.importJournalKey);
+    if (previous != null) {
+      // The rolled-back diary is the former C1 snapshot; the retained copy is
+      // the older C2 one, promoted back to the single C1 slot.
+      final older = jsonEncode({'version': 1, 'data': previous});
+      await prefs.setString(
+        LocalPreferences.importJournalKey,
+        '${LocalPreferences.importCommittedPrefix}$older',
+      );
+      await prefs.remove(LocalPreferences.importPrevJournalKey);
+    }
     await prefs.flush();
   }
 
@@ -2958,6 +3123,26 @@ class StorageService {
           'Импорт остановлен: текущие данные нельзя безопасно включить в резервную копию.',
         );
       }
+      // Keep the older committed copy before this import overwrites the main
+      // slot. Do this first: a failure here leaves the diary untouched.
+      final currentRaw = prefs.get(LocalPreferences.importJournalKey);
+      if (currentRaw is String &&
+          currentRaw.startsWith(LocalPreferences.importCommittedPrefix)) {
+        Map<String, Object> previous;
+        try {
+          previous = _decodeImportCheckpoint(currentRaw);
+        } on ImportRecoveryRequired {
+          throw StateError(
+            'Импорт остановлен: предыдущая копия нечитаема и не может быть сохранена.',
+          );
+        }
+        final older = jsonEncode({'version': 1, 'data': previous});
+        await prefs.setString(
+          LocalPreferences.importPrevJournalKey,
+          '${LocalPreferences.importPrevCommittedPrefix}$older',
+        );
+        await prefs.flush();
+      }
       var checkpointStarted = false;
       try {
         await prefs.setString(LocalPreferences.importJournalKey, pending);
@@ -3013,6 +3198,7 @@ class StorageService {
     }
     if (prefs.hasImportBackup) {
       await prefs.remove(LocalPreferences.importJournalKey);
+      await prefs.remove(LocalPreferences.importPrevJournalKey);
       await prefs.flush();
     }
   });
@@ -3039,7 +3225,10 @@ class StorageService {
           // has a committed prefix. Validate it while the in-isolate gate is
           // held; real recovery still requires an independent backup.
           if (prefs.hasImportBackup) {
-            _decodeImportCheckpoint(prefs.get(LocalPreferences.importJournalKey));
+            final journal = prefs.get(LocalPreferences.importJournalKey);
+            if (journal != null) _decodeImportCheckpoint(journal);
+            final previous = prefs.get(LocalPreferences.importPrevJournalKey);
+            if (previous != null) _decodeImportPrevCheckpoint(previous);
           }
           await prefs.setString(LocalPreferences.diaryGenerationKey, newId());
           await prefs.flush();
@@ -13575,6 +13764,18 @@ class SettingsScreen extends StatelessWidget {
       );
       return;
     }
+    final incoming = parseBackupDocuments(raw);
+    if (incoming == null) {
+      _showMessage(context, 'Копия не прошла проверку импортёра. Дневник не изменён.');
+      return;
+    }
+    final current = provider.storage.local.snapshot();
+    final preview = previewImportDocuments(incoming, current);
+    final guard = ImportReviewGuard(
+      documents: documentsFingerprint(incoming),
+      diary: documentsFingerprint(current),
+      account: currentImportAccount(provider),
+    );
 
     final confirmed = await showDialog<bool>(
       context: context,
@@ -13582,13 +13783,21 @@ class SettingsScreen extends StatelessWidget {
         backgroundColor: AppTheme.surface,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),
         title: Text('Заменить данные?'),
-        content: Text(
-          'Записи, рецепты и настройки будут заменены содержимым резервной копии. '
-          'Заранее сохраните отдельный экспорт текущего дневника. '
-          'Последняя предимпортная копия также хранится на этом устройстве до следующего импорта или очистки данных. '
-          'При следующей синхронизации замена и удаления могут попасть в облако. '
-          'Локальные черновики, избранное ИИ и согласие не входят в копию '
-          'и останутся на этом устройстве.',
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(preview.summary),
+            const SizedBox(height: 10),
+            Text(
+              'Записи, рецепты и настройки будут заменены содержимым резервной копии. '
+              'Заранее сохраните отдельный экспорт текущего дневника. '
+              'Последняя предимпортная копия также хранится на этом устройстве до следующего импорта или очистки данных. '
+              'При следующей синхронизации замена и удаления могут попасть в облако. '
+              'Локальные черновики, избранное ИИ и согласие не входят в копию '
+              'и останутся на этом устройстве.',
+            ),
+          ],
         ),
         actionsPadding: EdgeInsets.fromLTRB(16, 0, 16, 14),
         actions: [
@@ -13604,6 +13813,21 @@ class SettingsScreen extends StatelessWidget {
       ),
     );
     if (confirmed != true) return;
+    if (!context.mounted) return;
+    if (!await confirmImportRemovals(context, preview)) return;
+    if (!context.mounted) return;
+
+    final nowIncoming = parseBackupDocuments(raw);
+    await provider.storage.pendingMutations;
+    final stale = guard.staleReason(
+      documents: documentsFingerprint(nowIncoming ?? const {}),
+      diary: await currentDiaryFingerprint(provider),
+      account: currentImportAccount(provider),
+    );
+    if (stale != null) {
+      if (context.mounted) _showMessage(context, '$stale Импорт отменён.');
+      return;
+    }
 
     final error = await provider.importDataJson(raw);
     if (!context.mounted) return;

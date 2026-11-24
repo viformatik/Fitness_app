@@ -3,7 +3,6 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:share_plus/share_plus.dart';
 
 import '../legacy.dart'
     show
@@ -13,6 +12,7 @@ import '../legacy.dart'
         StorageService,
         dayKey,
         reviewBackupFile;
+import 'backup_delivery.dart';
 import 'preview_banner.dart';
 
 /// A deliberately read-only fallback when provider initialization fails.
@@ -108,31 +108,34 @@ class _StartupRecoveryScreenState extends State<StartupRecoveryScreen> {
     });
     try {
       final box = context.findRenderObject() as RenderBox?;
-      // Call the platform share while handling the explicit button press.
-      // A successful API return does not prove a file exists or is restorable.
-      await SharePlus.instance.share(
-        ShareParams(
-          files: [
-            XFile.fromData(
-              Uint8List.fromList(utf8.encode(snapshot)),
-              mimeType: 'application/json',
-            ),
-          ],
-          fileNameOverrides: [
+      // A successful share call alone does not prove that a file was saved.
+      final delivered = await deliverBackupFile(
+        Uint8List.fromList(utf8.encode(snapshot)),
+        fileName:
             'fitness_recovery_unverified_${dayKey(DateTime.now())}.json',
-          ],
-          sharePositionOrigin: box == null
-              ? null
-              : box.localToGlobal(Offset.zero) & box.size,
-        ),
+        mimeType: 'application/json',
+        sharePositionOrigin: box == null
+            ? null
+            : box.localToGlobal(Offset.zero) & box.size,
       );
       if (!mounted) return;
       setState(() {
-        _snapshot = null;
-        _review = null;
-        _notice =
-            'Запрос на сохранение или передачу завершён. Проверьте, '
-            'появился ли файл, и храните его в защищённом месте.';
+        // Keep an undelivered snapshot so the user can retry explicitly.
+        if (delivered != BackupDelivery.failed) {
+          _snapshot = null;
+          _review = null;
+        }
+        _notice = switch (delivered) {
+          BackupDelivery.shared =>
+            'Файл передан в систему обмена. Проверьте, появился ли файл, '
+                'и храните его в защищённом месте.',
+          BackupDelivery.downloaded =>
+            'Файл сохранён как загрузка браузера. Проверьте папку загрузок '
+                'и храните его в защищённом месте.',
+          BackupDelivery.failed =>
+            'Не удалось передать файл. Можно повторить попытку; '
+                'не очищайте данные приложения.',
+        };
       });
     } catch (_) {
       if (!mounted) return;

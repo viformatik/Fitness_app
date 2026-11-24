@@ -50,6 +50,11 @@ class LocalPreferences {
   // exported as a normal document, or removed by an ordinary clear operation.
   static const importJournalKey = '_pending_import_v1';
 
+  /// The previous import's committed C1 checkpoint. A new import must not
+  /// erase it: it is the only way back to the diary state before that import.
+  /// Like the main journal it is local-only and never synced or exported.
+  static const importPrevJournalKey = '_pending_import_prev_v1';
+
   /// Changes before replacement starts, invalidating pre-import undo actions.
   /// It is a local version token, not a credential or an exported document.
   static const diaryGenerationKey = '_diary_generation_v1';
@@ -62,6 +67,7 @@ class LocalPreferences {
   bool get importSyncPaused => getBool(importSyncPauseKey) == true;
   static const importPendingPrefix = 'P1:';
   static const importCommittedPrefix = 'C1:';
+  static const importPrevCommittedPrefix = 'C2:';
   static final Object _importZoneKey = Object();
   static Completer<void>? _importGate;
   static Object? _importToken;
@@ -111,7 +117,9 @@ class LocalPreferences {
 
   bool get hasImportBackup {
     final journal = get(importJournalKey);
-    return journal is String && journal.startsWith(importCommittedPrefix);
+    final previous = get(importPrevJournalKey);
+    return (journal is String && journal.startsWith(importCommittedPrefix)) ||
+        (previous is String && previous.startsWith(importPrevCommittedPrefix));
   }
 
   static bool get _insideImport =>
@@ -160,7 +168,8 @@ class LocalPreferences {
     if (!_insideImport) {
       final hasAppKey = keys.any(appKey);
       final hasLocalPrivacyKey = keys.any(localPrivacyKey);
-      final hasImportJournal = keys.contains(importJournalKey);
+      final hasImportJournal = keys.contains(importJournalKey) ||
+          keys.contains(importPrevJournalKey);
       final gate = _importGate;
       if (gate != null &&
           (hasAppKey ||
@@ -414,9 +423,12 @@ class LocalPreferences {
     final keys = getKeys()
         .where((k) => appKey(k) || (includeLocalAi && localPrivacyKey(k)))
         .toSet();
-    // Reserve even an absent journal key so concurrent local writes cannot
+    // Reserve even absent journal keys so concurrent local writes cannot
     // slip between the safety recheck and the selected deletion batch.
-    if (includeCommittedImportBackup) keys.add(importJournalKey);
+    if (includeCommittedImportBackup) {
+      keys.add(importJournalKey);
+      keys.add(importPrevJournalKey);
+    }
     if (keys.isEmpty) return Future<bool>.value(true);
     return _queueWrites(keys, () async {
       if (includeCommittedImportBackup && hasPendingImport) {
