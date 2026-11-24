@@ -147,29 +147,24 @@
         // Never uncover that now-retired in-memory diary.
         if (loading && window.fitnessGuardRetired !== true) loading.remove();
       });
-      // A missing guard must never fall through to an unprotected Flutter boot.
-      window.fitnessGuardLoadError = () => {
-        const loading = document.getElementById('loading');
-        if (!loading) return;
-        loading.classList.add('guard-message');
-        loading.setAttribute('role', 'alert');
-        loading.setAttribute('aria-label', 'Не удалось загрузить защиту дневника');
-        loading.replaceChildren();
-        const title = document.createElement('strong');
-        title.textContent = 'Не удалось загрузить защиту дневника';
-        const message = document.createElement('p');
-        message.textContent = 'Проверьте подключение и повторите запуск. Не очищайте данные браузера.';
-        const retry = document.createElement('button');
-        retry.type = 'button';
-        retry.textContent = 'Проверить снова';
-        retry.addEventListener('click', () => window.location.reload());
-        loading.append(title, message, retry);
-      };
-      // The synthetic guard alone may register the worker, after it checks
-      // the loopback host. No independent registration on arbitrary origins.
+      // Final build: no synthetic guard. Drop caches/service workers left by
+      // earlier preview deployments so a stale bundle cannot be shown.
+      (async function () {
+        try {
+          const regs = 'serviceWorker' in navigator
+            ? await navigator.serviceWorker.getRegistrations() : [];
+          const keys = 'caches' in window ? await caches.keys() : [];
+          if (!regs.length && !keys.length) return;
+          await Promise.all(regs.map((r) => r.unregister()));
+          await Promise.all(keys.map((k) => caches.delete(k)));
+          if (!sessionStorage.getItem('fitness_final_cache_reset')) {
+            sessionStorage.setItem('fitness_final_cache_reset', '1');
+            location.reload();
+          }
+        } catch (_) {}
+      })();
     })();
   </script>
-  <!-- Flutter may start only after the diary's cooperative browser lock. -->
-  <script src="fitness_tab_guard.js" onerror="window.fitnessGuardLoadError()"></script>
+  <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

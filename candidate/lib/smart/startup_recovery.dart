@@ -28,10 +28,12 @@ class StartupRecoveryApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-    title: 'Fitness Smart · безопасный запуск',
+    title: 'Fitness Smart',
     debugShowCheckedModeBanner: false,
-    builder: (context, child) =>
-        IsolatedPreviewBanner(child: child ?? const SizedBox.shrink()),
+    builder: (context, child) => IsolatedPreviewBanner(
+      enabled: false,
+      child: child ?? const SizedBox.shrink(),
+    ),
     theme: AppTheme.darkTheme,
     locale: const Locale('ru'),
     supportedLocales: const [Locale('ru')],

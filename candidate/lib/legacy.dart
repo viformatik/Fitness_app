@@ -14376,10 +14376,12 @@ class ImportRecoveryApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-    title: 'Fitness Smart · восстановление',
+    title: 'Fitness Smart',
     debugShowCheckedModeBanner: false,
-    builder: (context, child) =>
-        IsolatedPreviewBanner(child: child ?? const SizedBox.shrink()),
+    builder: (context, child) => IsolatedPreviewBanner(
+      enabled: false,
+      child: child ?? const SizedBox.shrink(),
+    ),
     theme: AppTheme.darkTheme,
     locale: const Locale('ru'),
     supportedLocales: const [Locale('ru')],
@@ -14515,8 +14517,10 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             key: ValueKey(recovery),
             title: 'Fitness Smart',
             debugShowCheckedModeBanner: false,
-            builder: (context, child) =>
-                IsolatedPreviewBanner(child: child ?? const SizedBox.shrink()),
+            builder: (context, child) => IsolatedPreviewBanner(
+              enabled: false,
+              child: child ?? const SizedBox.shrink(),
+            ),
             theme: AppTheme.darkTheme,
             locale: Locale('ru'),
             supportedLocales: [Locale('ru'), Locale('en')],

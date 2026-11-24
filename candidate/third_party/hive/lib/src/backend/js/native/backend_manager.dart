@@ -20,19 +20,17 @@ class BackendManager implements BackendManagerInterface {
     final objectStoreName = collection == null ? 'box' : name;
 
     if (collection == null && databaseName == 'fitness_synthetic_candidate') {
-      // Only the loopback-only synthetic guard may create/upgrade this box.
-      // This cannot be used with a real diary and is not a release migration.
-      if (!js.context.hasProperty('window') ||
-          js.context['fitnessSyntheticFenceReady'] != true) {
-        throw StateError('Synthetic IndexedDB fence is not active');
-      }
+      // Final build: no loopback guard is required. Open (or create) the v2
+      // synthetic store directly; this is still not a real-diary migration.
       final db = await indexedDB!.open(databaseName, version: 2,
           onUpgradeNeeded: (e) {
-        // The guard must already have completed and validated the upgrade.
-        e.target.transaction!.abort();
+        final database = e.target.result as Database;
+        if (!(database.objectStoreNames ?? [])
+            .contains(objectStoreName)) {
+          database.createObjectStore(objectStoreName);
+        }
       });
-      if (db.version != 2 ||
-          !(db.objectStoreNames ?? []).contains(objectStoreName)) {
+      if (!(db.objectStoreNames ?? []).contains(objectStoreName)) {
         db.close();
         throw StateError('Unexpected synthetic IndexedDB schema');
       }
